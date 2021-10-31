@@ -1,0 +1,50 @@
+
+.navbar-custom {
+    background: #5C76FF;
+}
+
+.text {
+    color: #FFFFFF;
+    font-family: Inter
+}
+
+.navbar {
+    left: 0px;
+    top: 0px;
+    position:sticky;
+}
+
+.navbar-brand {
+   position:absolute;
+   left:7.2%
+}
+
+.list {
+  position:relative;
+  left:70%;
+}
+
+.search{
+    position:relative;
+    width:200%
+}
+
+.cart{
+    position:relative;
+    left:42%;
+}
+
+.Instructor{
+    position:relative;
+    left:48%;
+}
+.login{
+    position:relative;
+    left:55%;
+}
+.signup{
+    position:relative;
+    left:62%;
+}
+
+
