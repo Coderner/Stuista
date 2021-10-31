@@ -1,0 +1,46 @@
+h2 { font-family: Ubuntu; font-size: 52px; font-style: normal; 
+    font-variant: normal; font-weight: 700; line-height: 26.4px; }
+ 
+body {
+        background-image: url("../Images/authbackground.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+}
+
+.logimage{
+    height:50%;
+    width:62%;
+    position:absolute;
+    left:-2%;
+    top:30%
+}
+
+.signimage{
+    height:400px;
+    width:400px;
+    position:absolute;
+    left:8%;
+    top:25%
+}
+
+.Login-form {
+    position:absolute;
+    text-align: center;
+    left:42%;
+    top:20%;
+}
+
+.Signup-form {
+    position:absolute;
+    text-align: center;
+    left:42%;
+    top:28%;
+}
+
+.input {
+    padding:0;
+    margin:0;
+    margin-top: 15%;
+}
+
+
