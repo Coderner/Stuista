@@ -1,55 +1,46 @@
-// import React from "react";
-// import "bootstrap/dist/css/bootstrap.css";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import "./Footer.css";
 
-// const Footer = () => {
-//     return(
-        
-//         )
-//     }
+const Footer = () => {
+    return(
+        <div className="main-footer">
+           <div className="container">
+               <div className="row">
+                   <div className="col">
+                       <ul className="footerlist">
+                           <li>Teach on Stuista</li>
+                           <li>Get the app</li>
+                           <li>About us</li>
+                           <li>Contact us</li>
+                       </ul>
+                   </div>
+                   <div className="col">
+                       <ul className="footerlist">
+                           <li>Careers</li>
+                           <li>Blog</li>
+                           <li>Help and Support</li>
+                           <li>Affiliate</li>
+                       </ul>
+                   </div>
+                   <div className="col">
+                       <ul className="footerlist">
+                           <li>Terms</li>
+                           <li>Privacy policy</li>
+                           <li>Sitemap</li>
+                       </ul>
+                   </div>
+             </div>
+             <div className="row">
+               <p className="col-sm">Stuista</p>
+               <p className="col-sm">
+                 Stuista. Inc.
+               </p>
+             </div>
+           </div>
+        </div>
+        )
+    }
     
-// export default Footer;
+export default Footer;
 
-// import React from "react";
-// import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-
-// const Footer = () => {
-//   return (
-//     <MDBFooter color="blue" className="font-small pt-4 mt-4">
-//       <MDBContainer fluid className="text-center text-md-left">
-//         <MDBRow>
-//           <MDBCol md="6">
-//             <h5 className="title">Footer Content</h5>
-//             <p>
-//               Here you can use rows and columns here to organize your footer
-//               content.
-//             </p>
-//           </MDBCol>
-//           <MDBCol md="6">
-//             <h5 className="title">Links</h5>
-//             <ul>
-//               <li className="list-unstyled">
-//                 <a href="#!">Link 1</a>
-//               </li>
-//               <li className="list-unstyled">
-//                 <a href="#!">Link 2</a>
-//               </li>
-//               <li className="list-unstyled">
-//                 <a href="#!">Link 3</a>
-//               </li>
-//               <li className="list-unstyled">
-//                 <a href="#!">Link 4</a>
-//               </li>
-//             </ul>
-//           </MDBCol>
-//         </MDBRow>
-//       </MDBContainer>
-//       <div className="footer-copyright text-center py-3">
-//         <MDBContainer fluid>
-//           &copy; {new Date().getFullYear()} Copyright: <a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
-//         </MDBContainer>
-//       </div>
-//     </MDBFooter>
-//   );
-// }
-
-// export default Footer;

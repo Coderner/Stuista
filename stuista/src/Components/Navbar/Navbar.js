@@ -1,8 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import logo from "../Images/Stuista.png";
-import cart from "../Images/Cart.png";
+import cart from "../Images/shopping-cart.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -30,10 +30,12 @@ const Navbar = () => {
                    <NavLink className="dropdown-item" to="#">Something else here</NavLink>
                  </div>
                 </li>
-
+                 
+                <li>
                 <form className="form-inline my-2 my-lg-0">
                   <input className="form-control mr-sm-2 search" type="search" placeholder="Search" aria-label="Search"/>
                 </form>
+                </li>
 
                 <li className="nav-item cart">
                    <NavLink className="nav-link" to="/cart">
@@ -46,12 +48,13 @@ const Navbar = () => {
                  </li>
 
                  <li className="nav-item login">
-                   <NavLink className="nav-link text" to="/login">Log in</NavLink>
+                 <NavLink to="/login"><button className="log-signbuttons">Log in</button></NavLink>
                  </li>
-                
+
                  <li className="nav-item signup">
-                   <NavLink className="nav-link text" to="/signup">Sign up</NavLink>
+                 <NavLink to="/signup"><button className="log-signbuttons">Sign Up</button></NavLink>
                  </li>
+                 
            </ul>
           </div>
         </nav>

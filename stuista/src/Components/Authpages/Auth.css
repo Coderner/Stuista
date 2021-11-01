@@ -1,18 +1,18 @@
 h2 { font-family: Ubuntu; font-size: 52px; font-style: normal; 
     font-variant: normal; font-weight: 700; line-height: 26.4px; }
- 
+
 body {
         background-image: url("../Images/authbackground.jpg");
-        background-size: 100%;
         background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
 }
-
 .logimage{
     height:50%;
     width:62%;
     position:absolute;
-    left:-2%;
-    top:30%
+    left:-8%;
+    top:32%; 
 }
 
 .signimage{
@@ -20,27 +20,92 @@ body {
     width:400px;
     position:absolute;
     left:8%;
-    top:25%
+    top:25%;
 }
 
 .Login-form {
     position:absolute;
     text-align: center;
-    left:42%;
-    top:20%;
+    left:40%;
+    top:28%;
+    width:29%;
+    /* z-index:-1; */
 }
 
 .Signup-form {
     position:absolute;
     text-align: center;
     left:42%;
-    top:28%;
+    top:26%;
+    width:29%;
+    /* z-index:-1; */
+}
+
+.login-form {
+    margin-top:20%;
+}
+.signup-form {
+    margin-top:20%;
 }
 
 .input {
-    padding:0;
-    margin:0;
-    margin-top: 15%;
+    width:100%;
+}
+
+input[type=text] {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../Images/Account.png');
+    background-position: 3.5%; 
+    background-repeat: no-repeat;
+    padding: 3.5% 10%;
+  }
+
+  input[type=email] {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../Images/mail.png');
+    background-position: 3.5%; 
+    background-repeat: no-repeat;
+    padding: 3.5% 10%;
+  }
+
+  input[type=password] {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../Images/Lock.png');
+    background-position: 3.5%; 
+    background-repeat: no-repeat;
+    padding: 3.5% 10%;
+  }
+
+.authbutton {
+    width:100%;
+    background: #3858FF;
+    color:white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 4% 10%;
+} 
+
+.forminput{
+    margin-top: 5%;
+    align-items: center;
+ }
+
+.forminput p{
+    color:red;
 }
 
 
