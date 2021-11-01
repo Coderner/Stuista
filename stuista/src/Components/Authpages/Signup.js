@@ -37,7 +37,8 @@ const SignUp = () => {
                                  </div>
                                  <div className="form group forminput">
                                      <label htmlFor="email"> </label>
-                                     <input type="email"
+                                     <input className="input"
+                                      type="email"
                                       name="email"
                                       id="email" 
                                       placeholder="Email"
@@ -48,7 +49,8 @@ const SignUp = () => {
                                  </div>
                                  <div className="form group forminput">
                                      <label htmlFor="password"> </label>
-                                     <input type="password"
+                                     <input className="input"
+                                      type="password"
                                       name="password"
                                       id="password" 
                                       placeholder="Password"
@@ -58,7 +60,7 @@ const SignUp = () => {
                                      <p>{errors.password}</p>
                                  </div>
                                  <div className="form group form button">
-                                     <input type="submit" name="signup" id="signup" className="form-submit" value="Sign up"/>
+                                     <input type="submit" name="signup" id="signup" className="authbutton form-submit" value="Sign up"/>
                                  </div>
                              </form>
                              <p>By signing up you agree to our <Link to="/terms">Terms & conditions</Link><br/>Already have an account?<Link to="/login">Log in</Link></p>

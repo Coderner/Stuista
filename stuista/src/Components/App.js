@@ -7,7 +7,7 @@ import Footer from "./Footer/Footer";
 import Forgetpassword from "./Authpages/Forgetpassword";
 import Categories from "./Categories";
 import Cart from "./Cart";
-import {Route} from 'react-router-dom';
+import {Route,Switch} from 'react-router-dom';
 
 
 function App() {
@@ -23,13 +23,11 @@ function App() {
       <div class="pagecontainer">
       <Navbar/>
       
-      <Route path="/Signup">
-       <Signup/>
-      </Route>
-
-      <Route path="/Login">
-       <Login/>
-      </Route>
+      <Switch>
+      <Route path="/Signup"><Signup/></Route>
+      <Route path="/Login"><Login/></Route>
+      </Switch>
+      
       </div>
 
       <Footer/>

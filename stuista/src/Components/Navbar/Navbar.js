@@ -30,10 +30,12 @@ const Navbar = () => {
                    <NavLink className="dropdown-item" to="#">Something else here</NavLink>
                  </div>
                 </li>
-
+                 
+                <li>
                 <form className="form-inline my-2 my-lg-0">
                   <input className="form-control mr-sm-2 search" type="search" placeholder="Search" aria-label="Search"/>
                 </form>
+                </li>
 
                 <li className="nav-item cart">
                    <NavLink className="nav-link" to="/cart">
@@ -46,7 +48,7 @@ const Navbar = () => {
                  </li>
 
                  <li className="nav-item login">
-                 <button><Link className="logbutton" to="/login">Login</Link></button>
+                 <button><NavLink className="logbutton" to="/login">Login</NavLink></button>
                  </li>
                 
                  <li className="nav-item signup">

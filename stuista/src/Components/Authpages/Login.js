@@ -18,7 +18,7 @@ const Login = () => {
                   </div>
                      <div className="Login-form">
                          <h2 className="FormTitle">Welcome Back</h2>
-                         <form className="login-form" id="login-form" onSubmit={handleSubmit} >
+                         <form className="login-form " id="login-form" onSubmit={handleSubmit} >
                              <div className="form group forminput">
                                  <label htmlFor="email"> </label>
                                  <input type="email" 
@@ -34,6 +34,7 @@ const Login = () => {
                              <div className="form group forminput">
                                  <label htmlFor="password"> </label>
                                  <input type="password" 
+                                 className="input" 
                                  name="password" 
                                  id="password" 
                                  placeholder="Password"
@@ -43,7 +44,7 @@ const Login = () => {
                                  <p>{errors.password}</p>
                              </div>
                              <div className="form group form button">
-                                 <input type="submit" name="login" id="login" className="form-submit" value="Log In"/>
+                                 <input type="submit" name="login" id="login" className="authbutton form-submit" value="Log in"/>
                              </div>
                          </form>
                          <p><Link to="/forgotpassword">Forgot password</Link><br/>No account?<Link to="/signup">Create One</Link></p>

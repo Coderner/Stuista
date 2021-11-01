@@ -12,6 +12,7 @@
     left: 0px;
     top: 0px;
     position:sticky;
+    z-index: 1;
 }
 
 .navbar-brand {
@@ -29,6 +30,11 @@
     width:200%;
     color:#FFFFFF;
     background-color:#5C76FF;
+    font-size: 16px;
+    background-image: url('../Images/search.svg');
+    background-position: 3.5%; 
+    background-repeat: no-repeat;
+    padding: 3.5% 10%;
 }
 
 .cart{
@@ -50,9 +56,8 @@
 }
 
 .logbutton{
-    padding:0;
-    margin:0;
     color:#FFFFFF;
     background-color: #5C76FF;
+    border: none;
 }
 
