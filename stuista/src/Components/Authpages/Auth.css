@@ -12,7 +12,8 @@ body {
     width:62%;
     position:absolute;
     left:-2%;
-    top:30%
+    top:30%;
+    z-index:-1;
 }
 
 .signimage{
@@ -20,7 +21,8 @@ body {
     width:400px;
     position:absolute;
     left:8%;
-    top:25%
+    top:25%;
+    z-index:-1;
 }
 
 .Login-form {
@@ -28,6 +30,7 @@ body {
     text-align: center;
     left:42%;
     top:20%;
+    /* z-index:-1; */
 }
 
 .Signup-form {
@@ -35,6 +38,7 @@ body {
     text-align: center;
     left:42%;
     top:28%;
+    /* z-index:-1; */
 }
 
 .input {
@@ -43,4 +47,7 @@ body {
     margin-top: 15%;
 }
 
+.forminput p{
+    color:red;
+}
 

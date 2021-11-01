@@ -26,7 +26,9 @@
 
 .search{
     position:relative;
-    width:200%
+    width:200%;
+    color:#FFFFFF;
+    background-color:#5C76FF;
 }
 
 .cart{
@@ -47,4 +49,10 @@
     left:62%;
 }
 
+.logbutton{
+    padding:0;
+    margin:0;
+    color:#FFFFFF;
+    background-color: #5C76FF;
+}
 

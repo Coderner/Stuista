@@ -1,8 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import logo from "../Images/Stuista.png";
-import cart from "../Images/Cart.png";
+import cart from "../Images/shopping-cart.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -46,7 +46,7 @@ const Navbar = () => {
                  </li>
 
                  <li className="nav-item login">
-                   <NavLink className="nav-link text" to="/login">Log in</NavLink>
+                 <button><Link className="logbutton" to="/login">Login</Link></button>
                  </li>
                 
                  <li className="nav-item signup">
