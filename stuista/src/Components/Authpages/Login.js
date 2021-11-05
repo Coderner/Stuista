@@ -1,13 +1,72 @@
-import React from "react";
+import React, {useState} from "react";
 import login from "../Images/Login.svg";
 import './Auth.css';
-import { Link } from "react-router-dom";
-import useForm from "./inputform";
-import validate from "./Validate"
+import { Link,useHistory } from "react-router-dom";
 
 const Login = () => {
-   
-    const{handleChange,values,handleSubmit,errors}=useForm(validate);
+
+    const history = useHistory();
+
+    const [user, setUser] = useState({
+        email:"",
+        password:""
+    });
+
+    const [errors,setErrors]= useState({});
+    
+    const validate = (user)=> {
+        let errors = {}
+    
+        if(!user.email.trim()){
+            errors.email = "Email required"
+        }
+        else if(!/^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i.test(user.email)){
+            errors.email = "Email address is invalid"
+        }
+    
+        if(!user.password.trim()){
+            errors.password = "Password required"
+        }else if(user.password.length < 8){
+            errors.password = "Password needs to be 8 characters or more"
+        }
+         
+        return errors;
+    }
+        
+    let name,value;
+    const handleInput = (e) =>{
+        console.log(e)
+        name=e.target.name;
+        value=e.target.value;
+        setUser({...user,[name]:value});
+        setErrors(validate(user));
+    }
+
+    const PostData = async (e) => {
+        e.preventDefault();
+        const {email,password} = user;
+         const res = await fetch("http://3f0d-137-59-242-139.ngrok.io/auth/signup",{
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+              
+            },
+            body:JSON.stringify({
+              email,password
+            })
+         });
+         const data = await res.json();
+    
+         if( !data){
+           window.alert("Login Failed");
+           console.log("Login Failed");
+         }else{
+          window.alert("Successful Login");
+          console.log("Successful Login");
+          history.push("/");
+         }
+      }
+
     return(
         <>
            <section className="Login">
@@ -17,8 +76,8 @@ const Login = () => {
                             </figure>
                   </div>
                      <div className="Login-form">
-                         <h2 className="FormTitle">Welcome Back</h2>
-                         <form className="login-form " id="login-form" onSubmit={handleSubmit} >
+                        <h2 className="FormTitle">Welcome Back</h2>
+                         <form method="POST" className="login-form " id="login-form">
                              <div className="form group forminput">
                                  <label htmlFor="email"> </label>
                                  <input type="email" 
@@ -26,10 +85,10 @@ const Login = () => {
                                  name="email" 
                                  id="email" 
                                  placeholder="Email"
-                                 value={values.email}
-                                 onChange={handleChange}
+                                 value={user.email}
+                                 onChange={handleInput}
                                  />
-                                  <p>{errors.email}</p>
+                                  <p className="error">{errors.email}</p>
                              </div>
                              <div className="form group forminput">
                                  <label htmlFor="password"> </label>
@@ -38,13 +97,13 @@ const Login = () => {
                                  name="password" 
                                  id="password" 
                                  placeholder="Password"
-                                 value={values.password}
-                                 onChange={handleChange}
+                                 value={user.password}
+                                 onChange={handleInput}
                                  />
-                                 <p>{errors.password}</p>
+                                 <p className="error">{errors.password}</p>
                              </div>
                              <div className="form group form button">
-                                 <input type="submit" name="login" id="login" className="authbutton form-submit" value="Log in"/>
+                                 <input type="submit" name="login" id="login" className="authbutton form-submit" value="Log in" onClick={PostData}/>
                              </div>
                          </form>
                          <p><Link to="/forgotpassword">Forgot password</Link><br/>No account?<Link to="/signup">Create One</Link></p>

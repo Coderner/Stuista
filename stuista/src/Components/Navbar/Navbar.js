@@ -8,13 +8,11 @@ import "./Navbar.css";
 const Navbar = () => {
         return(
             <>
-              <nav className="navbar navbar-custom navbar-expand-lg ">
+              <nav className="flex-container navbar navbar-custom navbar-expand-lg">
+
               <NavLink className="navbar-brand" to="/">
                   <img src={logo} alt="logo" />
               </NavLink>
-              {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span className="navbar-toggler-icon"></span>
-              </button> */}
 
               <div>
               <ul className="navbar-nav mr-auto list">
@@ -33,7 +31,7 @@ const Navbar = () => {
                  
                 <li>
                 <form className="form-inline my-2 my-lg-0">
-                  <input className="form-control mr-sm-2 search" type="search" placeholder="Search" aria-label="Search"/>
+                  <input className="form-control mr-sm-2 search" type="search" placeholder="Search"/>
                 </form>
                 </li>
 

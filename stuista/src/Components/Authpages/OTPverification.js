@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import forgetpasswordimage from "../Images/Forgetpassword.svg";
 import './Auth.css';
-import { Link,useHistory } from "react-router-dom";
+import {useHistory } from "react-router-dom";
 
 
-const Forgetpassword = () => {
+const OtpVerification = () => {
    
     const history = useHistory();
 
@@ -52,12 +52,12 @@ const Forgetpassword = () => {
            window.alert("Request Failed");
            console.log("Request Failed");
          }else{
-          window.alert("Successfully requested");
-          console.log("Successfully requested");
+          window.alert("Successfully verified");
+          console.log("Successfully verified");
           history.push("/login");
          }
       }
-
+    
     return(
         <>
            <section className="forgetpassword">
@@ -67,9 +67,9 @@ const Forgetpassword = () => {
                             </figure>
                   </div>
                      <div className="Forgetpassword-form">
-                         <h2 className="FormTitle space">Forgot Password</h2>
-                         <p>Please provide the email address you used when you signed for your Stuista account.</p> 
-                         <form method="POST"  className="forgetpassword-form " id="forgetpassword-form" >
+                         <h2 className="FormTitle space">OTP Verification</h2>
+                         <p>Enter OTP sent to your email address</p> 
+                         <form method="POST" className="forgetpassword-form " id="forgetpassword-form" >
                              <div className="form group forminput">
                                  <label htmlFor="email"> </label>
                                  <input type="email" 
@@ -83,7 +83,7 @@ const Forgetpassword = () => {
                                   <p>{errors.email}</p>
                              </div>
                              <div className="form group form button">
-                                 <Link to="/Otpverification"><input type="submit" name="forgetpassword" id="forgetpassword" className="authbutton form-submit" value="Next"  onClick={PostData}/></Link>
+                                 <input type="submit" name="OTP" id="OTP" className="authbutton form-submit" value="Confirm" onClick={PostData}/>
                              </div>
                          </form>
                         </div>
@@ -92,4 +92,4 @@ const Forgetpassword = () => {
     )
 }
 
-export default Forgetpassword;
+export default OtpVerification;
