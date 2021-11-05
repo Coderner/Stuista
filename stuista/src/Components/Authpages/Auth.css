@@ -145,7 +145,7 @@ input[type=text] {
 
 
 /* responsive */
-@media only screen and (max-width: 411px) {
+@media only screen and (max-width: 453px) {
     body {
        background-image: none;
     }

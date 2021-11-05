@@ -17,8 +17,26 @@
     position:relative;
 }
 
+.second{
+    padding-top:2%;
+}
+
+.language-button{
+    color:#FFFFFF;
+    background-color:black;
+    border: 1px solid #FFFF;
+    border-radius: 8px;
+    text-align: center;
+    margin-left: 15%;
+    padding:50%, 20%;
+    }
+
+.copyright{
+    margin-left: 57%;
+}
+
 /* Responsive */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 453px) {
     .main-footer,.container{
        display:none;
     }

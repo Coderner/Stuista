@@ -36,7 +36,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item cart">
-                   <NavLink className="nav-link" to="/cart">
+                   <NavLink className="nav-link" to="/otpverification">
                       <img src={cart} alt="cart" />
                    </NavLink>
                  </li>
