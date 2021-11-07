@@ -1,5 +1,6 @@
 h2 { font-family: Ubuntu; font-size: 52px; font-style: normal; 
-    font-variant: normal; font-weight: 700; line-height: 26.4px;}
+    font-variant: normal; font-weight: 700; line-height: 26.4px;
+    }
 
 body {
         background-image: url("../Images/authbackground.jpg");
@@ -83,6 +84,7 @@ input[type=text] {
     background-image: url('../Images/Account.png');
     background-position: 3.5%; 
     background-repeat: no-repeat;
+    background-size:6%;
     padding: 3.5% 10%;
   }
 
@@ -95,6 +97,7 @@ input[type=text] {
     background-image: url('../Images/mail.png');
     background-position: 3.5%; 
     background-repeat: no-repeat;
+    background-size:6%;
     padding: 3.5% 10%;
   }
 
@@ -107,6 +110,7 @@ input[type=text] {
     background-image: url('../Images/Lock.png');
     background-position: 3.5%; 
     background-repeat: no-repeat;
+    background-size:6%;
     padding: 3.5% 10%;
   }
 
@@ -141,27 +145,48 @@ input[type=text] {
 }
 
 
-
-
-
 /* responsive */
 @media only screen and (max-width: 453px) {
-    body {
+    body{
        background-image: none;
     }
+    .logimage, .signimage, .forgetpasswordimage{
+        display: none;
+    }
+
+    .Signup-form {
+        position:absolute;
+        text-align: center;
+        left:10%;
+        top:26%;
+        width:80%;
+    }
+    
+    .Login-form {
+        position:absolute;
+        text-align: center;
+        left:10%;
+        top:25%;
+        width:80%;
+    }
+    
+    .Forgetpassword-form {
+        position:absolute;
+        text-align: center;
+        left:11%;
+        top:25%;
+        width:80%;
+    }
+    
   }
 
-  @media only screen and (max-width: 786px){
-    .signimage {
-        display:none;
-    }
-    p{
-        font-size: 10px;
-    }
-  } 
+/* @media only screen and (max-width: 365px) {
+  h2{
+      font-size: 36px;
+  }
+} */
 
-
-  @media only screen and (max-width: 1234px) {
+@media only screen and (max-width: 1234px) {
     h1 {
           font-size: 36px;
     }

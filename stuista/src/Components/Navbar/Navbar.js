@@ -8,14 +8,14 @@ import "./Navbar.css";
 const Navbar = () => {
         return(
             <>
-              <nav className="flex-container navbar navbar-custom navbar-expand-lg">
+              <nav className="navbar navbar-custom navbar-expand-lg">
 
               <NavLink className="navbar-brand" to="/">
                   <img src={logo} alt="logo" />
               </NavLink>
 
               <div>
-              <ul className="navbar-nav mr-auto list">
+              <ul className="list navbar-nav mr-auto">
                  
                 <li className="nav-item dropdown">
                    <NavLink className="nav-link dropdown-toggle text categories" to="/categories" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -2,12 +2,6 @@
     background: #5C76FF;
 }
 
-.flex-container {
-    display:flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-
 .text {
     color: #FFFFFF;
     font-family: Inter
@@ -34,15 +28,13 @@ input[type=search] {
     width: 200%;
     font-size: 16px;
     background-color:#5C76FF;
-    background-image:url('../Images/search.svg') ;
+    /* background-image:url('../Images/search.svg') ; */
     background-position: 3.5%; 
     background-repeat: no-repeat;
     padding: 3.5% 10%;
   }
 
- 
-
-.cart{
+ .cart{
     position:relative;
     left:42%;
 }
@@ -77,6 +69,59 @@ input[type=search] {
     .navbar-custom{
        display:none;
     }
+  }
+
+@media only screen and (max-width: 893px) {
+    .navbar-brand {
+        position:absolute;
+        left:4%
+     }
+     
+     .list {
+       position:relative;
+       left:40%;
+     }
+     
+     input[type=search] {
+         position:relative;
+         width: 150%;
+         font-size: 12px;
+         background-color:#5C76FF;
+         /* background-image:url('../Images/search.svg') ; */
+         background-position: 2%; 
+         background-repeat: no-repeat;
+         padding: 2% 6%;
+       }
+     
+      .cart{
+         position:relative;
+         left:28%;
+     }
+     
+     .Instructor{
+         position:relative;
+         left:38%;
+     }
+     .login{
+         position:relative;
+         left:45%;
+     }
+     
+     .log-signbuttons{
+         color:#FFFFFF;
+         background-color:#5C76FF;
+         border: 1px solid #FFFF;
+         border-radius: 6px;
+         text-align: center;
+         margin-top: 7%;
+         padding:7%, 9%;
+         }
+     
+     
+     .signup{
+         position:relative;
+         left:48%;
+     }
   }
   
 
