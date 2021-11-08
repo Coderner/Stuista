@@ -1,0 +1,63 @@
+.learnwith{
+    font-family: Inter; font-size: 69px; font-style: normal; 
+    font-variant: normal; font-weight: 800; line-height: 76.24px;
+    color: #3F3D56;
+    text-shadow:4px 4px #00000040;
+}
+
+.stuista{
+    font-family: Ubuntu; font-size: 63px; font-style: normal; 
+    font-variant: normal; font-weight: 800; line-height: 76.24px;
+    color:#3887EE;
+    text-shadow:4px 4px rgba(56, 135, 238, 0.25);
+    text-align: center;
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Content{
+ margin-top:18%;
+ margin-left:54%;
+ margin-bottom:10%;
+}
+
+p{
+    font-family: Inter; text-align: center;font-weight: bold; padding-top:1.5%;
+}
+
+.Homepage{
+    background-color: white;
+}
+
+/* Coursebar */
+.Coursebar{
+    display: flex;
+    flex-direction: row;
+    background-color: #474481;
+    width: 100%;
+}
+
+ .course-list{
+   margin:1.2%;
+ }
+
+ .course-list-ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Inter;
+  }
+  .course-list-li {
+    padding: 4.5px 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  .course-list-li:hover {
+    font-weight: bolder;
+    color: white;
+  }
