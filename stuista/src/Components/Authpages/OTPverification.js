@@ -1,27 +1,33 @@
 import React, {useState} from "react";
 import forgetpasswordimage from "../Images/Forgetpassword.svg";
 import './Auth.css';
-import {useHistory } from "react-router-dom";
+import {Link,useHistory} from "react-router-dom";
 
+const Otpverification = () => {
 
-const OtpVerification = () => {
-   
     const history = useHistory();
 
-    const [user, setUser] = useState({email:""});
+    const [user, setUser] = useState({otp:""});
 
     const [errors,setErrors]= useState({});
+
+    const [counter, setCounter] = React.useState(120);
+    React.useEffect(() => {
+        const timer =
+          counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+        return () => clearInterval(timer);
+      }, [counter]);
     
     const validate = (user)=> {
         let errors = {}
-    
-        if(!user.email.trim()){
-            errors.email = "Email required"
+
+        if(!user.otp.trim()){
+            errors.otp = "Enter otp"
+        }else if(user.otp.length < 6){
+            errors.otp = "Enter valid 6 digit OTP"
         }
-        else if(!/^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i.test(user.email)){
-            errors.email = "Email address is invalid"
-        }
-            return errors;
+         
+        return errors;
     }
         
     let name,value;
@@ -35,7 +41,7 @@ const OtpVerification = () => {
 
     const PostData = async (e) => {
         e.preventDefault();
-        const {email} = user;
+        const {otp} = user;
          const res = await fetch("http://3f0d-137-59-242-139.ngrok.io/auth/signup",{
             method: "POST",
             headers: {
@@ -43,48 +49,49 @@ const OtpVerification = () => {
               
             },
             body:JSON.stringify({
-              email
+              otp
             })
          });
          const data = await res.json();
     
          if( !data){
-           window.alert("Request Failed");
-           console.log("Request Failed");
+           window.alert("Verification failed");
+           console.log("Verification failed");
          }else{
-          window.alert("Successfully verified");
-          console.log("Successfully verified");
-          history.push("/login");
+          window.alert("Verified");
+          console.log("Verified");
+          history.push("/");
          }
       }
-    
+
     return(
         <>
            <section className="forgetpassword">
                   <div className="passwordImage">
                              <figure>
-                                 <img src={forgetpasswordimage} alt="forget password image" className="forgetpasswordimage" />
+                                 <img src={forgetpasswordimage} alt="pic" className="forgetpasswordimage" />
                             </figure>
                   </div>
                      <div className="Forgetpassword-form">
-                         <h2 className="FormTitle space">OTP Verification</h2>
-                         <p>Enter OTP sent to your email address</p> 
-                         <form method="POST" className="forgetpassword-form " id="forgetpassword-form" >
+                        <h2 className="FormTitle">OTP Verification</h2>
+                         <form method="POST" className="forgetpassword-form" id="forgetpassword-form">
                              <div className="form group forminput">
-                                 <label htmlFor="email"> </label>
-                                 <input type="email" 
-                                 className="input password-email-input" 
-                                 name="email" 
-                                 id="email" 
-                                 placeholder="Email"
-                                 value={user.email}
+                                 <label htmlFor="otp"> </label>
+                                 <input type="number" 
+                                 className="input" 
+                                 name="otp" 
+                                 id="otp" 
+                                 placeholder="Enter OTP"
+                                 value={user.otp}
                                  onChange={handleInput}
                                  />
-                                  <p>{errors.email}</p>
+                                  <p className="error">{errors.otp}</p>
                              </div>
                              <div className="form group form button">
-                                 <input type="submit" name="OTP" id="OTP" className="authbutton form-submit" value="Confirm" onClick={PostData}/>
+                             <Link to="/"><input type="submit" name="otpverification" id="otpverification" className="authbutton form-submit" value="Confirm" onClick={PostData}/></Link>
                              </div>
+                             <div><h4>{counter} sec</h4></div>
+                             <h6>Didn't receive the code? <input type="submit" name="otpverification" id="otpverification" value="Resend Now" className="resend" onClick={PostData}/></h6>
                          </form>
                         </div>
          </section>
@@ -92,4 +99,4 @@ const OtpVerification = () => {
     )
 }
 
-export default OtpVerification;
+export default Otpverification;

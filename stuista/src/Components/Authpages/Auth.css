@@ -114,6 +114,15 @@ input[type=text] {
     padding: 3.5% 10%;
   }
 
+  input[type=number] {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    padding: 3.5% 10%;
+  }
+
   /* BUTTONS */
 .authbutton {
     width:100%;
@@ -125,6 +134,12 @@ input[type=text] {
     border-radius: 8px;
     padding: 4% 10%;
 } 
+
+.resend{
+    background: rgba(0,0,0,0);
+    border: none;
+    color:blue;
+}
 
 .forminput{
     margin-top: 5%;
