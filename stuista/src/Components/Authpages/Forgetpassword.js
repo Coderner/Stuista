@@ -67,7 +67,7 @@ const Forgetpassword = () => {
                             </figure>
                   </div>
                      <div className="Forgetpassword-form">
-                         <h2 className="FormTitle space">Forgot Password</h2>
+                         <h2 className="othertitles FormTitle space">Forgot Password</h2>
                          <p>Please provide the email address you used when you signed for your Stuista account.</p> 
                          <form method="POST"  className="forgetpassword-form " id="forgetpassword-form" >
                              <div className="form group forminput">

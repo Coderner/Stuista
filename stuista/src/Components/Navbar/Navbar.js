@@ -42,7 +42,7 @@ const Navbar = () => {
                  </li>
                  
                  <li className="nav-item Instructor">
-                   <NavLink className="nav-link text" to="/Instructor">Instructor</NavLink>
+                   <NavLink className="nav-link text" to="/resetpassword">Instructor</NavLink>
                  </li>
 
                  <li className="nav-item login">

@@ -76,7 +76,7 @@ const Login = () => {
                             </figure>
                   </div>
                      <div className="Login-form">
-                        <h2 className="FormTitle">Welcome Back</h2>
+                        <h2 className="Signlogtitle FormTitle">Welcome Back</h2>
                          <form method="POST" className="login-form " id="login-form">
                              <div className="form group forminput">
                                  <label htmlFor="email"> </label>

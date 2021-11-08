@@ -73,7 +73,7 @@ const Otpverification = () => {
                             </figure>
                   </div>
                      <div className="Forgetpassword-form">
-                        <h2 className="FormTitle">OTP Verification</h2>
+                        <h2 className="othertitles FormTitle">OTP Verification</h2>
                          <form method="POST" className="forgetpassword-form" id="forgetpassword-form">
                              <div className="form group forminput">
                                  <label htmlFor="otp"> </label>
@@ -90,7 +90,7 @@ const Otpverification = () => {
                              <div className="form group form button">
                              <Link to="/"><input type="submit" name="otpverification" id="otpverification" className="authbutton form-submit" value="Confirm" onClick={PostData}/></Link>
                              </div>
-                             <div><h4>{counter} sec</h4></div>
+                             <div><h5>{counter} sec</h5></div>
                              <h6>Didn't receive the code? <input type="submit" name="otpverification" id="otpverification" value="Resend Now" className="resend" onClick={PostData}/></h6>
                          </form>
                         </div>

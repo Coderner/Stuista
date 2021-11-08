@@ -84,7 +84,7 @@ const SignUp = () => {
                                 </figure>
                       </div>
                          <div className="Signup-form">
-                             <h2 className="FormTitle">Join Stuista</h2>
+                             <h2 className="Signlogtitle FormTitle">Join Stuista</h2>
                              <form method="POST" className="signup-form" id="signup-form" >
                                  <div className="form group forminput">
                                      <label htmlFor="fullname"> </label>

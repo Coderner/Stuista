@@ -7,6 +7,7 @@ import Footer from "./Footer/Footer";
 // import Homepage from "./Homepage";
 import Forgetpassword from "./Authpages/Forgetpassword";
 import Otpverification from "./Authpages/OTPverification";
+import Resetpassword from "./Authpages/Resetpassword";
 // import Categories from "./Categories";
 // import Cart from "./Cart";
 import {Route,Switch} from 'react-router-dom';
@@ -25,6 +26,7 @@ function App() {
       <Route path="/Login"><Login/></Route>
       <Route path="/forgotpassword"><Forgetpassword/></Route>
       <Route path="/Otpverification"><Otpverification/></Route>
+      <Route path="/resetpassword"><Resetpassword/></Route>
       </Switch>
 
       </div>
