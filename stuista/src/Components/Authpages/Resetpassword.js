@@ -1,38 +1,36 @@
 import React, {useState} from "react";
-import login from "../Images/Login.svg";
+import resetimage from "../Images/Signup.svg";
 import './Auth.css';
 import { Link,useHistory } from "react-router-dom";
 
-const Login = () => {
-
+const Resetpassword = () => {
+    
     const history = useHistory();
 
     const [user, setUser] = useState({
-        email:"",
-        password:""
+        password:"",
+        cpassword:""
     });
 
     const [errors,setErrors]= useState({});
     
     const validate = (user)=> {
         let errors = {}
-    
-        if(!user.email.trim()){
-            errors.email = "Email required"
-        }
-        else if(!/^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i.test(user.email)){
-            errors.email = "Email address is invalid"
-        }
-    
+
         if(!user.password.trim()){
             errors.password = "Password required"
         }else if(user.password.length < 8){
             errors.password = "Password needs to be 8 characters or more"
         }
+        if(!user.cpassword.trim()){
+            errors.cpassword = "Confirm Password required"
+        }else if(user.cpassword !== user.password){
+            errors.cpassword = "Passwords do not match"
+        }
          
         return errors;
     }
-        
+
     let name,value;
     const handleInput = (e) =>{
         console.log(e)
@@ -44,7 +42,7 @@ const Login = () => {
 
     const PostData = async (e) => {
         e.preventDefault();
-        const {email,password} = user;
+        const {password,cpassword} = user;
          const res = await fetch("http://3f0d-137-59-242-139.ngrok.io/auth/signup",{
             method: "POST",
             headers: {
@@ -52,45 +50,34 @@ const Login = () => {
               
             },
             body:JSON.stringify({
-              email,password
+              password,cpassword
             })
          });
          const data = await res.json();
     
          if( !data){
-           window.alert("Login Failed");
-           console.log("Login Failed");
+           window.alert("Attempt to change password Failed");
+           console.log("Attempt to change password Failed");
          }else{
-          window.alert("Successful Login");
-          console.log("Successful Login");
+          window.alert("Password changed Successfully");
+          console.log("Password changed Successfully");
           history.push("/");
          }
       }
-
+    
     return(
         <>
            <section className="Login">
-                  <div className="loginImage">
+                  <div className="signupImage">
                              <figure>
-                                 <img src={login} alt="login pic" className="logimage" />
+                                 <img src={resetimage} alt="pic" className="signimage" />
                             </figure>
                   </div>
-                     <div className="Login-form">
-                        <h2 className="Signlogtitle FormTitle">Welcome Back</h2>
-                         <form method="POST" className="login-form " id="login-form">
+                     <div className="Forgetpassword-form">
+                         <h2 className="othertitles FormTitle">Reset Password</h2>
+                         <form className="forgetpassword-form" id="forgetpassword-form">
                              <div className="form group forminput">
-                                 <label htmlFor="email"> </label>
-                                 <input type="email" 
-                                 className="input" 
-                                 name="email" 
-                                 id="email" 
-                                 placeholder="Email"
-                                 value={user.email}
-                                 onChange={handleInput}
-                                 />
-                                  <p className="error">{errors.email}</p>
-                             </div>
-                             <div className="form group forminput">
+                                 <h4>Enter New Password</h4>
                                  <label htmlFor="password"> </label>
                                  <input type="password" 
                                  className="input" 
@@ -100,17 +87,29 @@ const Login = () => {
                                  value={user.password}
                                  onChange={handleInput}
                                  />
-                                 <p className="error">{errors.password}</p>
+                                  <p className="error">{errors.password}</p>
+                             </div>
+                             <div className="form group forminput">
+                             <h4>Confirm Password</h4>
+                                 <label htmlFor="cpassword"> </label>
+                                 <input type="password" 
+                                 className="input" 
+                                 name="cpassword" 
+                                 id="cpassword" 
+                                 placeholder="Password"
+                                 value={user.cpassword}
+                                 onChange={handleInput}
+                                 />
+                                 <p className="error">{errors.cpassword}</p>
                              </div>
                              <div className="form group form button">
-                                 <input type="submit" name="login" id="login" className="authbutton form-submit" value="Log in" onClick={PostData}/>
+                                 <input type="submit" name="resetpassword" id="resetpassword" className="authbutton form-submit" value="Proceed" onClick={PostData}/>
                              </div>
                          </form>
-                         <p><Link to="/forgotpassword">Forgot password</Link><br/>No account?<Link to="/signup">Create One</Link></p>
                         </div>
          </section>
         </>
     )
 }
 
-export default Login;
+export default Resetpassword;

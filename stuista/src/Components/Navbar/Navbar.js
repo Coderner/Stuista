@@ -8,16 +8,14 @@ import "./Navbar.css";
 const Navbar = () => {
         return(
             <>
-              <nav className="navbar navbar-custom navbar-expand-lg ">
+              <nav className="navbar navbar-custom navbar-expand-lg">
+
               <NavLink className="navbar-brand" to="/">
                   <img src={logo} alt="logo" />
               </NavLink>
-              {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span className="navbar-toggler-icon"></span>
-              </button> */}
 
               <div>
-              <ul className="navbar-nav mr-auto list">
+              <ul className="list navbar-nav mr-auto">
                  
                 <li className="nav-item dropdown">
                    <NavLink className="nav-link dropdown-toggle text categories" to="/categories" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,18 +31,18 @@ const Navbar = () => {
                  
                 <li>
                 <form className="form-inline my-2 my-lg-0">
-                  <input className="form-control mr-sm-2 search" type="search" placeholder="Search" aria-label="Search"/>
+                  <input className="form-control mr-sm-2 search" type="search" placeholder="Search"/>
                 </form>
                 </li>
 
                 <li className="nav-item cart">
-                   <NavLink className="nav-link" to="/cart">
+                   <NavLink className="nav-link" to="/otpverification">
                       <img src={cart} alt="cart" />
                    </NavLink>
                  </li>
                  
                  <li className="nav-item Instructor">
-                   <NavLink className="nav-link text" to="/Instructor">Instructor</NavLink>
+                   <NavLink className="nav-link text" to="/resetpassword">Instructor</NavLink>
                  </li>
 
                  <li className="nav-item login">
