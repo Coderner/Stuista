@@ -15,9 +15,20 @@ const Course = () =>{
                                    <button className="EnrollNow">ENROLL NOW</button>
                                 </div>
                 </div>
-                <div className="I">
-                         <div>
-
+                <div className="Info">
+                         <div className="infocol">
+                               <h6>ESTIMATE TIME</h6>
+                               <p>5 Months</p>
+                               <p>At 5-10 hrs a week</p>
+                         </div>
+                         <div className="infocol">
+                               <h6>ENROLL BY</h6>
+                               <p>November 17, 2021</p>
+                               <p>Get access to classroom immediately on enrollment</p>
+                         </div>
+                         <div className="infocol">
+                               <h6></h6>
+                               <p>5 Months</p>
                          </div>
                 </div>
            </div>
