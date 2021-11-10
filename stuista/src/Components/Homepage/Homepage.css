@@ -119,19 +119,19 @@
     text-decoration: none;
   }
 
-  h5,h6,p{
+  .success-list-li h5,h6,p{
       text-align: center;
   }
 
-  p{
+  .success-list-li p{
       font-size: 90%;
   }
 
-  h5{
+  .success-list-li h5{
       font-weight: bolder;
   }
 
-  h6{
+  .success-list-li h6{
       letter-spacing: 10%;
       padding:6%;
   }

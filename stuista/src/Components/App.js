@@ -8,6 +8,7 @@ import Homepage from "./Homepage/Homepage";
 import Forgetpassword from "./Authpages/Forgetpassword";
 import Otpverification from "./Authpages/OTPverification";
 import Resetpassword from "./Authpages/Resetpassword";
+import Course from "./Course/Course";
 // import Categories from "./Categories";
 // import Cart from "./Cart";
 import {Route,Switch} from 'react-router-dom';
@@ -26,6 +27,7 @@ function App() {
       <Route path="/forgotpassword"><Forgetpassword/></Route>
       <Route path="/Otpverification"><Otpverification/></Route>
       <Route path="/resetpassword"><Resetpassword/></Route>
+      <Route path="/course"><Course/></Route>
       <Route path="/"><Homepage/></Route>
       </Switch>
 
