@@ -32,6 +32,14 @@
     background-color: white;
 }
 
+.homeimage{
+  height:400px;
+  width:400px;
+  position:absolute;
+  left:8%;
+  top:25%;
+}
+
 /* Coursebar */
 .Coursebar{
     display: flex;
@@ -75,10 +83,14 @@
     margin-bottom:10%;
     padding:10%;
   }
+
   /* Instructor */
-/* .Instructor{
-   background-color:white;
-} */
+.instructorimage{
+    height:50%;
+    width:50%;
+    position:relative;
+    left:55%;
+}
 
 
 /* Success Stories */
