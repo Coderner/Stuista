@@ -84,13 +84,56 @@
     padding:10%;
   }
 
+  /* ProgramsOverview */
+  .ProgramsOverview{
+    background-color: #F3F9FF;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .programs{
+    width:100%;
+    text-align: center;
+    padding:2% 0%;
+  }
+
+  .programOverviewimage{
+    height: 40%;
+    width: 40%;
+  }
+
+  .Programfeatures{
+    width:40%;
+    margin:5%;
+  }
+   
+ .title{
+   width:50%;
+ }
+
+ .paracontent{
+  width:50%;
+}
+
+
   /* Instructor */
 .instructorimage{
     height:50%;
     width:50%;
     position:relative;
-    left:55%;
+    left:50%;
 }
+
+.Instructorsection{
+  background-color: white;
+}
+
+.Instructorsection{
+  margin:5% 0%;
+  background-color:#FFF7FD;
+}
+
 
 
 /* Success Stories */

@@ -5,6 +5,10 @@ import { Link} from "react-router-dom";
 import Carousel from "react-elastic-carousel";
 import Instructor from "../Images/instructor.svg";
 import CoursegridImage from "../Images/coursegrid.png";
+import  third from "../Images/career-coach.webp";
+import first from "../Images/real-world-projects.webp";
+import  fourth from "../Images/self-paced.webp";
+import  second from "../Images/mentor.webp";
 
 
 const Homepage= () => {
@@ -81,10 +85,39 @@ const Homepage= () => {
                         </div>
                 </Carousel>
               </div>
+              
+              <div className="ProgramsOverview">
+            
+                   <h3 className="programs">All our Programs include</h3>
+                   <div className="Programfeatures">
+                     <figure><img src={first} alt="overview pic" className="programOverviewimage" /></figure>
+                        
+                        <h6 className="title">Real-world projects from industry experts</h6>
+                        <p className="paracontent">With real world projects and immersive content built in partnership with top tier companies, you’ll master the tech skills companies want</p>
+                      
+                   </div>
+                   <div className="Programfeatures">
+                     <figure><img src={second} alt="overview pic" className="programOverviewimage" /></figure>
+                        <h6 className="title">Technical mentor support</h6>
+                        <p className="paracontent">With real world projects and immersive content built in partnership with top tier companies, you’ll master the tech skills companies want</p>
+                   </div>
+                   <div className="Programfeatures">
+                     <figure><img src={third} alt="overview pic" className="programOverviewimage" /></figure>
+                        <h6 className="title">Career services</h6>
+                        <p className="paracontent">With real world projects and immersive content built in partnership with top tier companies, you’ll master the tech skills companies want</p>
+                   </div>
+                   <div className="Programfeatures">
+                     <figure><img src={fourth} alt="overview pic" className="programOverviewimage" /></figure>
+                        <h6 className="title">Flexible learning program</h6>
+                        <p className="paracontent">With real world projects and immersive content built in partnership with top tier companies, you’ll master the tech skills companies want</p>
+                   </div>
+                  
+              </div>
+
 
               <div className="Instructorsection">
                  <div className="InstructorContent">
-                   <h1>Instructor section</h1>
+                   <h4>Become an Instructor </h4>
                    <div><figure><img src={Instructor} alt="instructor pic" className="instructorimage" /></figure></div>
                  </div>
               </div>
