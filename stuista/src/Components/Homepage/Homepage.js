@@ -3,6 +3,9 @@ import "./Homepage.css";
 import signup from "../Images/Signup.svg";
 import { Link} from "react-router-dom";
 import Carousel from "react-elastic-carousel";
+import CoursegridImage from "../Images/coursegrid.svg";
+
+// import {Card} from "react-native-elements"; 
 // import Item from "./Item";
 
 const Homepage= () => {
@@ -43,16 +46,40 @@ const Homepage= () => {
                    </div>
                </div>
 
-                <div>
+                <div className="CourseCarousel">
                   <Carousel breakPoints={breakPoints}>
-                        <div>One</div>
-                        <div>Two</div>
-                        <div>Three</div>
-                        <div>Four</div>
-                        <div>Five</div>
-                        <div>Six</div>
-                        <div>Seven</div>
-                        <div>Eight</div>
+                        <div className="coursecard">
+                          <figure><img src={Carousel} alt="Course pic" className="carouselimage" /></figure>
+                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                        </div>
+                        <div className="coursecard">
+                          <figure><img src={Carousel} alt="Course pic" className="carouselimage" /></figure>
+                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                        </div>
+                        <div className="coursecard">
+                          <figure><img src={Carousel} alt="Course pic" className="carouselimage" /></figure>
+                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                        </div>
+                        <div className="coursecard">
+                          <figure><img src={Carousel} alt="Course pic" className="carouselimage" /></figure>
+                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                        </div>
+                        <div className="coursecard">
+                          <figure><img src={Carousel} alt="Course pic" className="carouselimage" /></figure>
+                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                        </div>
+                        <div className="coursecard">
+                          <figure><img src={Carousel} alt="Course pic" className="carouselimage" /></figure>
+                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                        </div>
+                        <div className="coursecard">
+                          <figure><img src={Carousel} alt="Course pic" className="carouselimage" /></figure>
+                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                        </div>
+                        <div className="coursecard">
+                          <figure><img src={Carousel} alt="Course pic" className="carouselimage" /></figure>
+                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                        </div>
                 </Carousel>
               </div>
 

@@ -45,7 +45,7 @@ const Login = () => {
     const PostData = async (e) => {
         e.preventDefault();
         const {email,password} = user;
-         const res = await fetch("http://3f0d-137-59-242-139.ngrok.io/auth/signup",{
+         const res = await fetch("http://1f10-2401-4900-ea4-aa30-499-290e-1dc7-54b2.ngrok.io/auth/login",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
