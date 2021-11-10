@@ -80,7 +80,7 @@ const Forgetpassword = () => {
                                  value={user.email}
                                  onChange={handleInput}
                                  />
-                                  <p>{errors.email}</p>
+                                  <p className="error">{errors.email}</p>
                              </div>
                              <div className="form group form button">
                                  <Link to="/Otpverification"><input type="submit" name="forgetpassword" id="forgetpassword" className="authbutton form-submit" value="Next"  onClick={PostData}/></Link>

@@ -24,7 +24,7 @@
  margin-bottom:10%;
 }
 
-p{
+.para{
     font-family: Inter; text-align: center;font-weight: bold; padding-top:1.5%;
 }
 
@@ -61,3 +61,66 @@ p{
     font-weight: bolder;
     color: white;
   }
+
+  /* Caraousel */
+  .CourseCarousel{
+    background-color: white;
+  }
+
+  .coursecard{
+    border: solid;
+    border-color:#FFFFFF;
+    box-shadow: 0px 6.599999904632568px 15px 0px #00000040;
+    margin-top: 10%;
+    margin-bottom:10%;
+    padding:10%;
+  }
+  /* Instructor */
+/* .Instructor{
+   background-color:white;
+} */
+
+
+/* Success Stories */
+.SuccessStories{
+    display: flex;
+    flex-direction: row;
+    background-color:white;
+    width: 100%;
+}
+
+ .success-list{
+   margin:1.2%;
+ }
+
+ .success-list-ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Inter;
+  }
+  .success-list-li {
+    padding: 5px 60px;
+    color: black;
+    text-decoration: none;
+  }
+
+  h5,h6,p{
+      text-align: center;
+  }
+
+  p{
+      font-size: 90%;
+  }
+
+  h5{
+      font-weight: bolder;
+  }
+
+  h6{
+      letter-spacing: 10%;
+      padding:6%;
+  }
+  

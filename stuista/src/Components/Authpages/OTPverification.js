@@ -2,14 +2,12 @@ import React, {useState} from "react";
 import forgetpasswordimage from "../Images/Forgetpassword.svg";
 import './Auth.css';
 import {Link,useHistory} from "react-router-dom";
+import "./Signup";
 
 const Otpverification = () => {
 
-    const history = useHistory();
-
     const [user, setUser] = useState({otp:""});
-
-    const [errors,setErrors]= useState({});
+    const history = useHistory();
 
     const [counter, setCounter] = React.useState(120);
     React.useEffect(() => {
@@ -18,16 +16,15 @@ const Otpverification = () => {
         return () => clearInterval(timer);
       }, [counter]);
     
+    const [errors,setErrors]= useState({});
     const validate = (user)=> {
         let errors = {}
-
         if(!user.otp.trim()){
             errors.otp = "Enter otp"
         }else if(user.otp.length < 6){
             errors.otp = "Enter valid 6 digit OTP"
         }
-         
-        return errors;
+          return errors;
     }
         
     let name,value;
@@ -41,15 +38,18 @@ const Otpverification = () => {
 
     const PostData = async (e) => {
         e.preventDefault();
-        const {otp} = user;
-         const res = await fetch("http://3f0d-137-59-242-139.ngrok.io/auth/signup",{
+         let object = {
+           otp:user,
+           email:history.location.state.email
+         }
+        //  const {otp} = user;
+         const res = await fetch("http://1f10-2401-4900-ea4-aa30-499-290e-1dc7-54b2.ngrok.io/auth/verifyotp",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
-              
-            },
+             },
             body:JSON.stringify({
-              otp
+              object
             })
          });
          const data = await res.json();
@@ -60,9 +60,11 @@ const Otpverification = () => {
          }else{
           window.alert("Verified");
           console.log("Verified");
-          history.push("/");
          }
+         history.push("/signup");
       }
+
+    
 
     return(
         <>
@@ -74,10 +76,10 @@ const Otpverification = () => {
                   </div>
                      <div className="Forgetpassword-form">
                         <h2 className="othertitles FormTitle">OTP Verification</h2>
-                         <form method="POST" className="forgetpassword-form" id="forgetpassword-form">
+                         <form method="POST" className="forgetpassword-form" id="forgetpassword-form" >
                              <div className="form group forminput">
                                  <label htmlFor="otp"> </label>
-                                 <input type="number" 
+                                 <input type="text" 
                                  className="input" 
                                  name="otp" 
                                  id="otp" 
