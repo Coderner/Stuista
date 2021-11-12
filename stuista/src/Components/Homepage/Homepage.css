@@ -92,6 +92,22 @@
     flex-wrap: wrap;
   }
 
+  .Programfeatures{
+    width:40%;
+    margin:5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+   
+ .featureImage{
+    width:50%;
+  }
+
+  .feature{
+    width:50%;
+  }
+
   .programs{
     width:100%;
     text-align: center;
@@ -99,40 +115,59 @@
   }
 
   .programOverviewimage{
-    height: 40%;
-    width: 40%;
+    height: 100%;
+    width: 100%;
   }
 
-  .Programfeatures{
-    width:40%;
-    margin:5%;
-  }
-   
- .title{
-   width:50%;
- }
-
- .paracontent{
-  width:50%;
-}
 
 
   /* Instructor */
 .instructorimage{
-    height:50%;
-    width:50%;
     position:relative;
-    left:50%;
-}
+}  
+
 
 .Instructorsection{
   background-color: white;
+}
+
+.InstructorContent{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .Instructorsection{
   margin:5% 0%;
   background-color:#FFF7FD;
 }
+
+.becomeInstructor{
+  width:50%;
+}
+
+.Image{
+  width:50%;
+}
+
+.instructor{
+  padding-top:28%;
+  padding-left:26%;
+}
+
+.instructorbutton {
+  width:64%;
+  background: #3858FF;
+  color:white;
+  border: none;
+  text-align: center;
+  padding:1.5%;
+  font-size: 140%;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-left:22%;
+  margin-top:3.5%;
+} 
 
 
 

@@ -89,27 +89,35 @@ const Homepage= () => {
               <div className="ProgramsOverview">
             
                    <h3 className="programs">All our Programs include</h3>
+
                    <div className="Programfeatures">
-                     <figure><img src={first} alt="overview pic" className="programOverviewimage" /></figure>
-                        
+                        <div className="featureImage"><figure><img src={first} alt="overview pic" className="programOverviewimage" /></figure></div>
+                        <div className="feature">
                         <h6 className="title">Real-world projects from industry experts</h6>
                         <p className="paracontent">With real world projects and immersive content built in partnership with top tier companies, you’ll master the tech skills companies want</p>
-                      
+                        </div>
                    </div>
+
                    <div className="Programfeatures">
-                     <figure><img src={second} alt="overview pic" className="programOverviewimage" /></figure>
+                        <div className="featureImage"><figure><img src={second} alt="overview pic" className="programOverviewimage" /></figure></div>
+                        <div className="feature">
                         <h6 className="title">Technical mentor support</h6>
                         <p className="paracontent">With real world projects and immersive content built in partnership with top tier companies, you’ll master the tech skills companies want</p>
-                   </div>
+                        </div>
+                  </div>
                    <div className="Programfeatures">
-                     <figure><img src={third} alt="overview pic" className="programOverviewimage" /></figure>
+                        <div className="featureImage"><figure><img src={third} alt="overview pic" className="programOverviewimage" /></figure></div>
+                        <div className="feature">
                         <h6 className="title">Career services</h6>
                         <p className="paracontent">With real world projects and immersive content built in partnership with top tier companies, you’ll master the tech skills companies want</p>
-                   </div>
+                        </div>
+                  </div>
                    <div className="Programfeatures">
-                     <figure><img src={fourth} alt="overview pic" className="programOverviewimage" /></figure>
+                        <div className="featureImage"><figure><img src={fourth} alt="overview pic" className="programOverviewimage" /></figure></div>
+                        <div className="feature">
                         <h6 className="title">Flexible learning program</h6>
                         <p className="paracontent">With real world projects and immersive content built in partnership with top tier companies, you’ll master the tech skills companies want</p>
+                        </div>
                    </div>
                   
               </div>
@@ -117,8 +125,11 @@ const Homepage= () => {
 
               <div className="Instructorsection">
                  <div className="InstructorContent">
-                   <h4>Become an Instructor </h4>
-                   <div><figure><img src={Instructor} alt="instructor pic" className="instructorimage" /></figure></div>
+                   <div className="becomeInstructor">
+                     <h1 className="instructor">Become an Instructor </h1>
+                     <button className="instructorbutton">Proceed</button>
+                    </div>
+                   <div className="Image"><figure><img src={Instructor} alt="instructor pic" className="instructorimage" /></figure></div>
                  </div>
               </div>
 
