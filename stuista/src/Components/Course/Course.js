@@ -12,9 +12,11 @@ const Course = () =>{
                                    <h1>Become a Data Engineer</h1>
                                    <p>Data Engineering is the foundation for the new world of Big Data. Enroll now to build <br/>
                                     production-ready data infrastructure, an essential skill for advancing your data career.</p>
-                                   <button className="EnrollNow">ENROLL NOW</button>
+                                   <button className="CourseButton syllabus">DOWNLOAD SYLLABUS</button>
+                                   <button className="CourseButton enroll">ENROLL NOW</button>
                                 </div>
                 </div>
+
                 <div className="Info">
                          <div className="infocol">
                                <h6>ESTIMATE TIME</h6>
@@ -31,6 +33,40 @@ const Course = () =>{
                                <p>5 Months</p>
                          </div>
                 </div>
+
+                <h1 className="WhatLearn">What you will learn</h1>
+
+                <div className="CourseContentblock">
+
+                </div>
+
+                <div className="Reviewsblock">
+                          <div className="Reviewcard">
+                           {/* <figure><img src={CoursegridImage} className="carouselimage" /></figure> */}
+                           <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          </div>
+                          <div className="Reviewcard">
+                           {/* <figure><img src={CoursegridImage} className="carouselimage" /></figure> */}
+                           <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          </div>
+                          <div className="Reviewcard">
+                           {/* <figure><img src={CoursegridImage} className="carouselimage" /></figure> */}
+                           <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          </div>
+                          <div className="Reviewcard">
+                           {/* <figure><img src={CoursegridImage} className="carouselimage" /></figure> */}
+                           <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          </div>
+                          <div className="Reviewcard">
+                           {/* <figure><img src={CoursegridImage} className="carouselimage" /></figure> */}
+                           <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          </div>
+                          <div className="Reviewcard">
+                           {/* <figure><img src={CoursegridImage} className="carouselimage" /></figure> */}
+                           <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          </div>
+                </div>
+
            </div>
              
      </div>
