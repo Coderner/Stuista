@@ -2,15 +2,13 @@ import React, {useState} from "react";
 import resetimage from "../Images/Signup.svg";
 import './Auth.css';
 import { Link,useHistory } from "react-router-dom";
+// import "./resetOTPverification";
 
 const Resetpassword = () => {
-    
-    const history = useHistory();
 
-    const [user, setUser] = useState({
-        password:"",
-        cpassword:""
-    });
+    const [user, setUser] = useState({password:"",cpassword:""});
+    const [allEntry, setallEntry] = useState([]);
+    const history = useHistory();
 
     const [errors,setErrors]= useState({});
     
@@ -39,25 +37,34 @@ const Resetpassword = () => {
         setUser({...user,[name]:value});
         setErrors(validate(user));
     }
+    
 
     const PostData = async (e) => {
         e.preventDefault();
-        const {password,cpassword} = user;
-         const res = await fetch("http://3f0d-137-59-242-139.ngrok.io/auth/signup",{
+        const newEntry = { ...user}
+        // console.log(newEntry);
+        setallEntry([...allEntry, newEntry]);
+
+        let object = {
+            password:newEntry.password,
+            cpassword:newEntry.cpassword,
+            email: history.location.state.email,
+            otp: history.location.state.otp
+        }
+        console.log(object);
+         const res = await fetch("http://7de0-2401-4900-30cd-7aa2-ad8b-d123-c68b-76b9.ngrok.io/auth/resetpassword",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
-              
-            },
-            body:JSON.stringify({
-              password,cpassword
-            })
+              },
+            body:JSON.stringify(object)
          });
          const data = await res.json();
-    
-         if( !data){
-           window.alert("Attempt to change password Failed");
-           console.log("Attempt to change password Failed");
+         console.log(data);
+
+         if( !data || data.Error){
+           window.alert(data.Error);
+           console.log(data.Error);
          }else{
           window.alert("Password changed Successfully");
           console.log("Password changed Successfully");

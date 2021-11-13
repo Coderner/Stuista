@@ -7,6 +7,7 @@ import { Link,useHistory} from "react-router-dom";
 const SignUp = () => {
 
         const history = useHistory();
+        const [allEntry, setallEntry] = useState([]);
 
         const [user, setUser] = useState({
             fullname:"",
@@ -52,28 +53,40 @@ const SignUp = () => {
 
         const PostData = async (e) => {
             e.preventDefault();
-            const {fullname,email,password} = user;
-             const res = await fetch("http://1f10-2401-4900-ea4-aa30-499-290e-1dc7-54b2.ngrok.io/auth/signup",{
+
+            //  const {fullname,email,password} = user;
+             const newEntry = { ...user }
+             setallEntry([...allEntry, newEntry]);
+             let object ={
+                fullname:newEntry.fullname,
+                email:newEntry.email,
+                password:newEntry.password
+              }
+            //   console.log(object);
+
+             const res = await fetch("http://7de0-2401-4900-30cd-7aa2-ad8b-d123-c68b-76b9.ngrok.io/auth/signup",{
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json"
-                  
-                },
-                body:JSON.stringify({
-                  fullname,email,password
-                })
+                 },
+                body:JSON.stringify(object)
              });
              const data = await res.json();
+             console.log(data);
         
-             if( !data){
-               window.alert("INVALID Registration");
-               console.log("INVALID Registration");
-             }else{
-              window.alert("Successful Registration");
-              console.log("Successful Registration");
-              history.push("/otpverification");
+             if( !data || data.Error){
+               window.alert(data.Error);
+               console.log(data.Error);
              }
+              else if(data.message){
+                window.alert(data.message);
+                console.log(data.message);
+                history.push({
+                pathname : "/signupotpverification",
+                state : object
+            });
           }
+        }
 
         return(
             <>

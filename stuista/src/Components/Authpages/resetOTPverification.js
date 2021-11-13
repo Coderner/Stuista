@@ -2,14 +2,15 @@ import React, {useState} from "react";
 import forgetpasswordimage from "../Images/Forgetpassword.svg";
 import './Auth.css';
 import {Link,useHistory} from "react-router-dom";
-import "./Signup";
+import "./Signup.js";
 
-const Otpverification = () => {
+const ResetOtpverification = () => {
 
     const [user, setUser] = useState({otp:""});
+    const [allEntry, setallEntry] = useState([]);
     const history = useHistory();
 
-    const [counter, setCounter] = React.useState(120);
+    const [counter, setCounter] = React.useState(300);
     React.useEffect(() => {
         const timer =
           counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
@@ -36,33 +37,61 @@ const Otpverification = () => {
         setErrors(validate(user));
     }
 
+    const handleResendOtp = async (e) => {
+      e.preventDefault();
+      const resendobject = {
+        // fullname: history.location.state.fullname,
+        email: history.location.state.email,
+        // password: history.location.state.password
+      };
+      const response = await fetch("http://7de0-2401-4900-30cd-7aa2-ad8b-d123-c68b-76b9.ngrok.io/auth/resendotp",{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+         },
+        body:JSON.stringify(resendobject)
+     });
+     window.alert("OTP Resent");
+     const resend_data = await response.json();
+     console.log(resend_data);
+    }
+
     const PostData = async (e) => {
         e.preventDefault();
-         let object = {
-           otp:user,
-           email:history.location.state.email
-         }
-        //  const {otp} = user;
-         const res = await fetch("http://1f10-2401-4900-ea4-aa30-499-290e-1dc7-54b2.ngrok.io/auth/verifyotp",{
+        const newEntry = { ...user}
+        setallEntry([...allEntry, newEntry]);
+
+        let object = {
+            otp: newEntry.otp,
+            // fullname: history.location.state.fullname,
+            email: history.location.state.email,
+            // password : history.location.state.password
+        }
+        // console.log(object);
+
+         const res = await fetch("http://7de0-2401-4900-30cd-7aa2-ad8b-d123-c68b-76b9.ngrok.io/auth/checkotpbeforereset",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
              },
-            body:JSON.stringify({
-              object
-            })
+            body:JSON.stringify(
+              object)
          });
          const data = await res.json();
+         console.log(data)
     
-         if( !data){
-           window.alert("Verification failed");
-           console.log("Verification failed");
+         if( !data || data.Error){
+           window.alert(data.Error);
+           console.log(data.Error);
          }else{
           window.alert("Verified");
           console.log("Verified");
+          history.push({
+            pathname : "/resetpassword",
+            state : object
+          });
          }
-         history.push("/signup");
-      }
+   }
 
     
 
@@ -93,7 +122,7 @@ const Otpverification = () => {
                              <Link to="/"><input type="submit" name="otpverification" id="otpverification" className="authbutton form-submit" value="Confirm" onClick={PostData}/></Link>
                              </div>
                              <div><h5>{counter} sec</h5></div>
-                             <h6>Didn't receive the code? <input type="submit" name="otpverification" id="otpverification" value="Resend Now" className="resend" onClick={PostData}/></h6>
+                             <h6>Didn't receive the code? <input type="submit" name="otpverification" id="otpverification" value="Resend Now" className="resend" onClick={handleResendOtp}/></h6>
                          </form>
                         </div>
          </section>
@@ -101,4 +130,4 @@ const Otpverification = () => {
     )
 }
 
-export default Otpverification;
+export default ResetOtpverification;

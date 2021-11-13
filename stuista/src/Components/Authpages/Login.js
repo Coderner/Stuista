@@ -45,22 +45,26 @@ const Login = () => {
     const PostData = async (e) => {
         e.preventDefault();
         const {email,password} = user;
-         const res = await fetch("http://1f10-2401-4900-ea4-aa30-499-290e-1dc7-54b2.ngrok.io/auth/login",{
+         const res = await fetch("http://7de0-2401-4900-30cd-7aa2-ad8b-d123-c68b-76b9.ngrok.io/auth/login",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
-              
             },
             body:JSON.stringify({
               email,password
             })
          });
          const data = await res.json();
+         console.log(data);
+         const Token= data.accesstoken;
+         console.log(data.accesstoken);
+
     
-         if( !data){
-           window.alert("Login Failed");
-           console.log("Login Failed");
-         }else{
+         if( !data || data.Error){
+           window.alert(data.Error);
+           console.log(data.Error);
+         }
+        else{
           window.alert("Successful Login");
           console.log("Successful Login");
           history.push("/");
