@@ -1,5 +1,5 @@
 .navbar-custom {
-    background: #5C76FF;
+    background: #4741A6;
 }
 
 .text {
@@ -27,7 +27,7 @@ input[type=search] {
     position:relative;
     width: 200%;
     font-size: 16px;
-    background-color:#5C76FF;
+    background-color: white;
     /* background-image:url('../Images/search.svg') ; */
     background-position: 3.5%; 
     background-repeat: no-repeat;
@@ -50,7 +50,7 @@ input[type=search] {
 
 .log-signbuttons{
     color:#FFFFFF;
-    background-color:#5C76FF;
+    background-color:#4741A6;
     border: 1px solid #FFFF;
     border-radius: 8px;
     text-align: center;

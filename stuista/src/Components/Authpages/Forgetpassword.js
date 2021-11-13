@@ -43,7 +43,7 @@ const Forgetpassword = () => {
            email:newEntry.email,
            password:newEntry.password
          }
-         const res = await fetch("http://7de0-2401-4900-30cd-7aa2-ad8b-d123-c68b-76b9.ngrok.io/auth/verifybeforereset",{
+         const res = await fetch("http://1752-2401-4900-4454-5289-c139-c0b3-39b0-e7d9.ngrok.io/auth/verifybeforereset",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
