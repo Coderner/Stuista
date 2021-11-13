@@ -1,6 +1,5 @@
 import React from "react";
 import "./Homepage.css";
-import homepage from "../Images/Homepage.svg";
 import { Link} from "react-router-dom";
 import Carousel from "react-elastic-carousel";
 import Instructor from "../Images/instructor.svg";
@@ -9,7 +8,9 @@ import  third from "../Images/career-coach.webp";
 import first from "../Images/real-world-projects.webp";
 import  fourth from "../Images/self-paced.webp";
 import  second from "../Images/mentor.webp";
-
+import story2 from "../Images/SuccessStoriesImages/Story1.svg";
+import story1 from "../Images/SuccessStoriesImages/Story2.svg";
+import story3 from "../Images/SuccessStoriesImages/Story3.svg";
 
 const Homepage= () => {
  
@@ -23,10 +24,7 @@ const Homepage= () => {
             <div>
 
                 <div  className="Homepage flex-container">
-                                <div className="Content">  
-                                    <figure>
-                                     <img src={homepage} alt="homepage pic" className="homeimage" />
-                                    </figure>
+                                <div className="Content"> 
                                   <h1 className="learnwith">Learn with joy on</h1>
                                   <h1 className="stuista">Stuista</h1>  
                                   <p className="para">Take the next step in your career with a world class learning <br/> Experience.</p>  
@@ -54,43 +52,58 @@ const Homepage= () => {
                           <div className="coursecard">
                           <Link to="/course">
                           <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                           <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
-                          </Link>
-                          </div>
-                        <div className="coursecard">
-                          <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          <p>Intro Data Analysis</p>
+                          <p className="Estimatetime">ESTIMATE TIME</p>
+                          <p>1 Month</p>
                         </div>
                         <div className="coursecard">
                           <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          <p>Intro Data Analysis</p>
+                          <p className="Estimatetime">ESTIMATE TIME</p>
+                          <p>1 Month</p>
                         </div>
                         <div className="coursecard">
                           <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          <p>Intro Data Analysis</p>
+                          <p className="Estimatetime">ESTIMATE TIME</p>
+                          <p>1 Month</p>
                         </div>
                         <div className="coursecard">
                           <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          <p>Intro Data Analysis</p>
+                          <p className="Estimatetime">ESTIMATE TIME</p>
+                          <p>1 Month</p>
                         </div>
                         <div className="coursecard">
                           <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          <p>Intro Data Analysis</p>
+                          <p className="Estimatetime">ESTIMATE TIME</p>
+                          <p>1 Month</p>
                         </div>
                         <div className="coursecard">
                           <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          <p>Intro Data Analysis</p>
+                          <p className="Estimatetime">ESTIMATE TIME</p>
+                          <p>1 Month</p>
                         </div>
                         <div className="coursecard">
                           <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p><p>ESTIMATE TIME</p><p>1 Month</p>
+                          <p>Intro Data Analysis</p>
+                          <p className="Estimatetime">ESTIMATE TIME</p>
+                          <p>1 Month</p>
+                        </div>
+                        <div className="coursecard">
+                          <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
+                          <p>Intro Data Analysis</p>
+                          <p className="Estimatetime">ESTIMATE TIME</p>
+                          <p>1 Month</p>
                         </div>
                 </Carousel>
               </div>
               
               <div className="ProgramsOverview">
             
-                   <h3 className="programs">All our Programs include</h3>
+                   <h1 className="programs">All our Programs include</h1>
 
                    <div className="Programfeatures">
                         <div className="featureImage"><figure><img src={first} alt="overview pic" className="programOverviewimage" /></figure></div>
@@ -139,18 +152,21 @@ const Homepage= () => {
                   <div className="success-list">
                       <ul class="success-list-ul">
                          <li className = "success-list-li">
+                            <figure><img src={story1} alt="Success Story image" className="Story"/></figure>
                              <h5>Alex</h5>
                              <p>"The curriculum was directly targeted <br/> toward applied techniques with high profile <br/> projects – real datasets with industry<br/> partners. It helped me achieve my career<br/> transition goal."</p>
                              <h6>NOW AT</h6>
                              <h6>Raytheon | Data Scientist</h6>
                         </li>
                          <li className = "success-list-li">
+                             <figure><img src={story2} alt="Success Story image" className="Story"/></figure>
                              <h5>Alex</h5>
                              <p>"The curriculum was directly targeted <br/> toward applied techniques with high profile <br/> projects – real datasets with industry<br/> partners. It helped me achieve my career<br/> transition goal."</p>
                              <h6>NOW AT</h6>
                              <h6>Raytheon | Data Scientist</h6>
                         </li>
                          <li className = "success-list-li">
+                              <figure><img src={story3} alt="Success Story image" className="Story"/></figure>
                               <h5>Alex</h5>
                               <p>"The curriculum was directly targeted <br/> toward applied techniques with high profile <br/> projects – real datasets with industry<br/> partners. It helped me achieve my career<br/> transition goal."</p>
                               <h6>NOW AT</h6>
