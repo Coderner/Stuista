@@ -6,7 +6,8 @@ import Login from "./Authpages/Login";
 import Footer from "./Footer/Footer";
 import Homepage from "./Homepage/Homepage";
 import Forgetpassword from "./Authpages/Forgetpassword";
-import Otpverification from "./Authpages/OTPverification";
+import SignupOtpverification from "./Authpages/signupOTPverification";
+import ResetOtpverification from "./Authpages/resetOTPverification";
 import Resetpassword from "./Authpages/Resetpassword";
 // import Categories from "./Categories";
 // import Cart from "./Cart";
@@ -24,7 +25,8 @@ function App() {
       <Route path="/Signup"><Signup/></Route>
       <Route path="/Login"><Login/></Route>
       <Route path="/forgotpassword"><Forgetpassword/></Route>
-      <Route path="/Otpverification"><Otpverification/></Route>
+      <Route path="/signupotpverification"><SignupOtpverification/></Route>
+      <Route path="/resetotpverification"><ResetOtpverification/></Route>
       <Route path="/resetpassword"><Resetpassword/></Route>
       <Route path="/"><Homepage/></Route>
       </Switch>

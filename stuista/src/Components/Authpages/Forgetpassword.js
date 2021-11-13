@@ -7,7 +7,7 @@ import { Link,useHistory } from "react-router-dom";
 const Forgetpassword = () => {
    
     const history = useHistory();
-
+    const [allEntry, setallEntry] = useState([]);
     const [user, setUser] = useState({email:""});
 
     const [errors,setErrors]= useState({});
@@ -35,26 +35,33 @@ const Forgetpassword = () => {
 
     const PostData = async (e) => {
         e.preventDefault();
-        const {email} = user;
-         const res = await fetch("http://3f0d-137-59-242-139.ngrok.io/auth/signup",{
+        // const {email} = user;
+        const newEntry = { ...user }
+        setallEntry([...allEntry, newEntry]);
+        let object ={
+           fullname:newEntry.fullname,
+           email:newEntry.email,
+           password:newEntry.password
+         }
+         const res = await fetch("http://7de0-2401-4900-30cd-7aa2-ad8b-d123-c68b-76b9.ngrok.io/auth/verifybeforereset",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
-              
             },
-            body:JSON.stringify({
-              email
-            })
+            body:JSON.stringify(object)
          });
          const data = await res.json();
     
-         if( !data){
-           window.alert("Request Failed");
-           console.log("Request Failed");
+         if( !data || data.Error){
+           window.alert(data.Error);
+           console.log(data.Error);
          }else{
           window.alert("Successfully requested");
           console.log("Successfully requested");
-          history.push("/login");
+           history.push({
+            pathname : "/resetotpverification",
+            state : object
+        });
          }
       }
 
@@ -83,7 +90,7 @@ const Forgetpassword = () => {
                                   <p className="error">{errors.email}</p>
                              </div>
                              <div className="form group form button">
-                                 <Link to="/Otpverification"><input type="submit" name="forgetpassword" id="forgetpassword" className="authbutton form-submit" value="Next"  onClick={PostData}/></Link>
+                                 <input type="submit" name="forgetpassword" id="forgetpassword" className="authbutton form-submit" value="Next"  onClick={PostData}/>
                              </div>
                          </form>
                         </div>
