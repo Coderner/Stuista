@@ -9,6 +9,7 @@ import Forgetpassword from "./Authpages/Forgetpassword";
 import SignupOtpverification from "./Authpages/signupOTPverification";
 import ResetOtpverification from "./Authpages/resetOTPverification";
 import Resetpassword from "./Authpages/Resetpassword";
+import Course from "./Course/Course";
 // import Categories from "./Categories";
 // import Cart from "./Cart";
 import {Route,Switch} from 'react-router-dom';
@@ -28,6 +29,7 @@ function App() {
       <Route path="/signupotpverification"><SignupOtpverification/></Route>
       <Route path="/resetotpverification"><ResetOtpverification/></Route>
       <Route path="/resetpassword"><Resetpassword/></Route>
+      <Route path="/course"><Course/></Route>
       <Route path="/"><Homepage/></Route>
       </Switch>
 

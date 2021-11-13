@@ -49,7 +49,8 @@ const Homepage= () => {
 
                 <div className="CourseCarousel">
                   <Carousel breakPoints={breakPoints}>
-                        <div className="coursecard">
+                          <div className="coursecard">
+                          <Link to="/course">
                           <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
                           <p>Intro Data Analysis</p>
                           <p className="Estimatetime">ESTIMATE TIME</p>

@@ -238,7 +238,7 @@
       line-height: 17px;
   }
 
-  h5{
+  .success-list-li h5{
       font-weight: bolder;
       padding-top: 14%;
       padding-bottom:6%;
