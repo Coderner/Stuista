@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { NavLink,Link } from "react-router-dom";
 import logo from "../Images/Stuista.png";
-import cart from "../Images/shopping-cart.png";
+import cart from "../Images/Icons/shopping-cart.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -36,13 +36,13 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item cart">
-                   <NavLink className="nav-link" to="/otpverification">
+                   <NavLink className="nav-link" to="/userdashboard">
                       <img src={cart} alt="cart" />
                    </NavLink>
                  </li>
                  
                  <li className="nav-item Instructor">
-                   <NavLink className="nav-link text" to="/resetpassword">Instructor</NavLink>
+                   <NavLink className="nav-link text" to="/instructordashboard">Instructor</NavLink>
                  </li>
 
                  <li className="nav-item login">

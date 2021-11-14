@@ -55,6 +55,7 @@ const Homepage= () => {
                           <p>Intro Data Analysis</p>
                           <p className="Estimatetime">ESTIMATE TIME</p>
                           <p>1 Month</p>
+                          </Link>
                         </div>
                         <div className="coursecard">
                           <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
