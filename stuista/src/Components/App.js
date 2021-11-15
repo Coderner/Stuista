@@ -13,7 +13,7 @@ import Course from "./Course/Course";
 import InstructorDashboard from "./Instructor/InstructorDashboard";
 import UserDashboard from "./User/UserDashboard";
 // import Categories from "./Categories";
-// import Cart from "./Cart";
+import Cart from "./Cart/Cart";
 import {Route,Switch} from 'react-router-dom';
 
 function App() {
@@ -34,6 +34,7 @@ function App() {
       <Route path="/course"><Course/></Route>
       <Route path="/userdashboard"><UserDashboard/></Route>
       <Route path="/instructordashboard"><InstructorDashboard/></Route>
+      <Route path="/cart"><Cart/></Route>
       <Route path="/"><Homepage/></Route>
       </Switch>
 
