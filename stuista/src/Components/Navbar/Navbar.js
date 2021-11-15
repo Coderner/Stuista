@@ -18,15 +18,9 @@ const Navbar = () => {
               <ul className="list navbar-nav mr-auto">
                  
                 <li className="nav-item dropdown">
-                   <NavLink className="nav-link dropdown-toggle text categories" to="/categories" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <NavLink className="nav-link text categories" to="/categories">
                     Categories
                    </NavLink>
-                   <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                   <NavLink className="dropdown-item" to="#">Action</NavLink>
-                   <NavLink className="dropdown-item" to="#">Another action</NavLink>
-                   <div className="dropdown-divider"></div>
-                   <NavLink className="dropdown-item" to="#">Something else here</NavLink>
-                 </div>
                 </li>
                  
                 <li>
@@ -42,7 +36,7 @@ const Navbar = () => {
                  </li>
                  
                  <li className="nav-item Instructor">
-                   <NavLink className="nav-link text" to="/instructordashboard">Instructor</NavLink>
+                   <NavLink className="nav-link text" to="/instructordashboard">As Instructor</NavLink>
                  </li>
 
                  <li className="nav-item login">

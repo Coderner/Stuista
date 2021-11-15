@@ -8,17 +8,19 @@ import Homepage from "./Homepage/Homepage";
 import Forgetpassword from "./Authpages/Forgetpassword";
 import SignupOtpverification from "./Authpages/signupOTPverification";
 import ResetOtpverification from "./Authpages/resetOTPverification";
+import LoginOtpverification from "./Authpages/loginOTPverification";
 import Resetpassword from "./Authpages/Resetpassword";
 import Course from "./Course/Course";
 import InstructorDashboard from "./Instructor/InstructorDashboard";
 import UserDashboard from "./User/UserDashboard";
 // import Categories from "./Categories";
 import Cart from "./Cart/Cart";
+import ContinueAs from "./Authpages/ContinueAs";
+import Linkngrok from "./Link";
 import {Route,Switch} from 'react-router-dom';
 
 function App() {
-
-
+  
   return (
     <div className="app">
       
@@ -30,7 +32,9 @@ function App() {
       <Route path="/forgotpassword"><Forgetpassword/></Route>
       <Route path="/signupotpverification"><SignupOtpverification/></Route>
       <Route path="/resetotpverification"><ResetOtpverification/></Route>
+      <Route path="/loginotpverification"><LoginOtpverification/></Route>
       <Route path="/resetpassword"><Resetpassword/></Route>
+      <Route path="/continueas"><ContinueAs/></Route>
       <Route path="/course"><Course/></Route>
       <Route path="/userdashboard"><UserDashboard/></Route>
       <Route path="/instructordashboard"><InstructorDashboard/></Route>
@@ -41,6 +45,7 @@ function App() {
       </div>
 
       <Footer/>
+      <Linkngrok/>
        
     </div>
     );

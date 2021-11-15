@@ -4,7 +4,7 @@ import './Auth.css';
 import {Link,useHistory} from "react-router-dom";
 import "./Signup.js";
 
-const SignupOtpverification = () => {
+const LoginOtpverification = () => {
 
     const [user, setUser] = useState({otp:""});
     const [allEntry, setallEntry] = useState([]);
@@ -40,7 +40,6 @@ const SignupOtpverification = () => {
     const handleResendOtp = async (e) => {
       e.preventDefault();
       const resendobject = {
-        fullname: history.location.state.fullname,
         email: history.location.state.email,
         password: history.location.state.password
       };
@@ -63,7 +62,6 @@ const SignupOtpverification = () => {
 
         let object = {
             otp: newEntry.otp,
-            fullname: history.location.state.fullname,
             email: history.location.state.email,
             password : history.location.state.password
         }
@@ -128,4 +126,4 @@ const SignupOtpverification = () => {
     )
 }
 
-export default SignupOtpverification;
+export default LoginOtpverification;

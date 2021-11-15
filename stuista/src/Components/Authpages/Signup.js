@@ -3,7 +3,6 @@ import signup from "../Images/Signup.svg";
 import './Auth.css';
 import { Link,useHistory} from "react-router-dom";
 
-
 const SignUp = () => {
 
         const history = useHistory();
@@ -64,7 +63,7 @@ const SignUp = () => {
               }
             //   console.log(object);
 
-             const res = await fetch("http://1752-2401-4900-4454-5289-c139-c0b3-39b0-e7d9.ngrok.io/auth/signup",{
+             const res = await fetch("http://5f4d-2401-4900-5a34-abe3-49b2-f93a-8c24-6907.ngrok.io/auth/signup",{
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json"

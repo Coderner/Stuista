@@ -155,7 +155,7 @@
   background-color: white;
 }
 
-.InstructorContent{
+#InstructorContent{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -166,7 +166,7 @@
   background-color:#FFF7FD;
 }
 
-.becomeInstructor{
+#becomeInstructor{
   width:50%;
 }
 
@@ -174,12 +174,12 @@
   width:50%;
 }
 
-.instructor{
+#instructor{
   padding-top:28%;
   padding-left:26%;
 }
 
-.instructorbutton {
+#instructorbutton {
   width:64%;
   background: #4741A6;
   color:white;

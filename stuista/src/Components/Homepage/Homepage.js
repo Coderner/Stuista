@@ -140,10 +140,10 @@ const Homepage= () => {
 
 
               <div className="Instructorsection">
-                 <div className="InstructorContent">
-                   <div className="becomeInstructor">
-                     <h1 className="instructor">Become an Instructor </h1>
-                     <button className="instructorbutton">Proceed</button>
+                 <div id="InstructorContent">
+                   <div id="becomeInstructor">
+                     <h1 id="instructor">Become an Instructor </h1>
+                     <button id="instructorbutton">Proceed</button>
                     </div>
                    <div className="Image"><figure><img src={Instructor} alt="instructor pic" className="instructorimage" /></figure></div>
                  </div>

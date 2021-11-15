@@ -52,20 +52,23 @@ const Resetpassword = () => {
             otp: history.location.state.otp
         }
         console.log(object);
-         const res = await fetch("http://1752-2401-4900-4454-5289-c139-c0b3-39b0-e7d9.ngrok.io/auth/resetpassword",{
+
+         const res = await fetch("http://5f4d-2401-4900-5a34-abe3-49b2-f93a-8c24-6907.ngrok.io/auth/resetpassword",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
               },
             body:JSON.stringify(object)
          });
+
          const data = await res.json();
          console.log(data);
 
          if( !data || data.Error){
            window.alert(data.Error);
            console.log(data.Error);
-         }else{
+         }
+         else{
           window.alert("Password changed Successfully");
           console.log("Password changed Successfully");
           history.push("/");
@@ -82,7 +85,7 @@ const Resetpassword = () => {
                   </div>
                      <div className="Forgetpassword-form">
                          <h2 className="othertitles FormTitle">Reset Password</h2>
-                         <form className="forgetpassword-form" id="forgetpassword-form">
+                         <form method="POST" className="forgetpassword-form" id="forgetpassword-form">
                              <div className="form group forminput">
                                  <h4>Enter New Password</h4>
                                  <label htmlFor="password"> </label>

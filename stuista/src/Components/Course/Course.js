@@ -52,6 +52,8 @@ const Course = () =>{
                       </div>
                 </div>
 
+
+
                 <div className="ProgramsOverview">
             
                    <h1 className="programs">All our Programs include</h1>
@@ -87,6 +89,8 @@ const Course = () =>{
                    </div>
                   
                 </div>
+
+                
 
                 <div className="Reviews">
                       <div className="ReviewContent">
