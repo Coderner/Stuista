@@ -36,7 +36,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item cart">
-                   <NavLink className="nav-link" to="/userdashboard">
+                   <NavLink className="nav-link" to="/cart">
                       <img src={cart} alt="cart" />
                    </NavLink>
                  </li>

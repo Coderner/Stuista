@@ -1,0 +1,51 @@
+.Cart{
+    background-color: white;
+}
+
+/* Cart Summary */
+
+.CartTitle{
+    font-family: Roboto,sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+    line-height: 100%;
+}
+
+.CartSummary{
+    margin: 6% 3% 0%;
+    padding:6% 5% 3%;
+}
+
+.Buynow{
+    width:28%;
+    background: #4741A6;
+    color:white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 1.2% 4%;
+  }
+
+/* Courses in Cart */
+
+.CourseItem{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.CourseContentblock{
+    border: solid;
+    border-color: black;
+    border-width: thin;
+    background-color: #FFFFFF;
+    margin:4% 3%;
+    width:94%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
