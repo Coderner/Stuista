@@ -12,6 +12,7 @@ import LoginOtpverification from "./Authpages/loginOTPverification";
 import Resetpassword from "./Authpages/Resetpassword";
 import Course from "./Course/Course";
 import InstructorDashboard from "./Instructor/InstructorDashboard";
+import CourseUpload from "./Instructor/CourseUpload";
 import UserDashboard from "./User/UserDashboard";
 // import Categories from "./Categories";
 import Cart from "./Cart/Cart";
@@ -38,6 +39,7 @@ function App() {
       <Route path="/course"><Course/></Route>
       <Route path="/userdashboard"><UserDashboard/></Route>
       <Route path="/instructordashboard"><InstructorDashboard/></Route>
+      <Route path="/courseupload"><CourseUpload/></Route>
       <Route path="/cart"><Cart/></Route>
       <Route path="/"><Homepage/></Route>
       </Switch>

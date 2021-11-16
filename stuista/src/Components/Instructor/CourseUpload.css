@@ -1,0 +1,40 @@
+.CourseUpload{
+    background-color: white;
+}
+
+#CourseUploadTitle{
+    margin-top: 10%;
+    margin-left:5%
+}
+
+.Formupload{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.forminput{
+    width:40%;
+    margin-left: 5%;
+}
+
+.input{
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    padding: 3.5% 10%;
+  }
+
+.CourseUploadButton {
+    width:40%;
+    background: #4741A6;
+    color:white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 2% 4%;
+    margin:3% 5%;
+} 

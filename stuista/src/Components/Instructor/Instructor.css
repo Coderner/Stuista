@@ -76,6 +76,7 @@
   .CreateCourse{
     width:28%;
     background: #4741A6;
+    text-decoration: none;
     color:white;
     border: none;
     text-align: center;

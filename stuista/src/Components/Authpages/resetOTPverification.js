@@ -44,7 +44,7 @@ const ResetOtpverification = () => {
         email: history.location.state.email,
         // password: history.location.state.password
       };
-      const response = await fetch("http://5f4d-2401-4900-5a34-abe3-49b2-f93a-8c24-6907.ngrok.io/auth/resendotp",{
+      const response = await fetch("http://cd25-2409-4050-d98-33bb-9842-613e-1b35-216a.ngrok.io/auth/resendotp",{
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -69,7 +69,7 @@ const ResetOtpverification = () => {
         }
         // console.log(object);
 
-         const res = await fetch("http://5f4d-2401-4900-5a34-abe3-49b2-f93a-8c24-6907.ngrok.io/auth/checkotpbeforereset",{
+         const res = await fetch("http://cd25-2409-4050-d98-33bb-9842-613e-1b35-216a.ngrok.io/auth/checkotpbeforereset",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"

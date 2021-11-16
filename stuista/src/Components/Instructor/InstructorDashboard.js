@@ -22,7 +22,7 @@ return(
 
                       <div className="CreateCourseSection">
                             <h1 className="CourseCreationHeading">Jump Into Course Creation</h1>
-                            <button className="CreateCourse">Create your course</button>
+                            <button className="CreateCourse"><Link to="/courseupload">Create your course</Link></button>
                      </div>
               
               </div>
