@@ -135,9 +135,13 @@ const Homepage= () => {
                   <Carousel breakPoints={breakPoints} className="s">
                           
                            {courseData.map((user) => (
+                            
                                 <div className="coursecard">
                                    <figure><img src={"https://stuista.herokuapp.com/" + user.imageUrl } alt="Course pic" className="carouselimage" /></figure>
-                                   <p>{user.title}</p> 
+                                   <Link to={{ 
+                                                 pathname: "/course", 
+                                                 state: user
+                                             }}><p>{user.title}</p></Link>
                                    <p className="Estimatetime">ESTIMATE TIME</p>
                                    <p>{user.duration}</p>
                                 </div>
