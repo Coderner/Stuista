@@ -3,7 +3,6 @@ import signup from "../Images/Signup.svg";
 import './Auth.css';
 import { Link,useHistory} from "react-router-dom";
 
-
 const SignUp = () => {
 
         const history = useHistory();
@@ -49,7 +48,7 @@ const SignUp = () => {
             value=e.target.value;
             setUser({...user,[name]:value});
             setErrors(validate(user));
-        }
+            }
 
         const PostData = async (e) => {
             e.preventDefault();
@@ -64,7 +63,7 @@ const SignUp = () => {
               }
             //   console.log(object);
 
-             const res = await fetch("http://1752-2401-4900-4454-5289-c139-c0b3-39b0-e7d9.ngrok.io/auth/signup",{
+             const res = await fetch("https://stuista.herokuapp.com/auth/signup",{
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json"

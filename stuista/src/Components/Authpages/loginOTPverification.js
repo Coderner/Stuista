@@ -4,7 +4,7 @@ import './Auth.css';
 import {Link,useHistory} from "react-router-dom";
 import "./Signup.js";
 
-const ResetOtpverification = () => {
+const LoginOtpverification = () => {
 
     const [user, setUser] = useState({otp:""});
     const [allEntry, setallEntry] = useState([]);
@@ -40,9 +40,8 @@ const ResetOtpverification = () => {
     const handleResendOtp = async (e) => {
       e.preventDefault();
       const resendobject = {
-        // fullname: history.location.state.fullname,
         email: history.location.state.email,
-        // password: history.location.state.password
+        password: history.location.state.password
       };
       const response = await fetch("https://stuista.herokuapp.com/auth/resendotp",{
         method: "POST",
@@ -63,13 +62,12 @@ const ResetOtpverification = () => {
 
         let object = {
             otp: newEntry.otp,
-            // fullname: history.location.state.fullname,
             email: history.location.state.email,
-            // password : history.location.state.password
+            password : history.location.state.password
         }
         // console.log(object);
 
-         const res = await fetch("https://stuista.herokuapp.com/auth/checkotpbeforereset",{
+         const res = await fetch("https://stuista.herokuapp.com/auth/verifyotp",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -86,12 +84,10 @@ const ResetOtpverification = () => {
          }else{
           window.alert("Verified");
           console.log("Verified");
-          history.push({
-            pathname : "/resetpassword",
-            state : object
-          });
+          history.push("/");
          }
-   }
+         
+      }
 
     
 
@@ -130,4 +126,4 @@ const ResetOtpverification = () => {
     )
 }
 
-export default ResetOtpverification;
+export default LoginOtpverification;

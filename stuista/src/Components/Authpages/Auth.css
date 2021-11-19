@@ -9,6 +9,12 @@
     padding-bottom: 8%;
 }
 
+/* ContinueAS */
+.ContinueAsform{
+   width:60%;
+   margin:20% 20%;
+}
+
 body {
         background-image: url("../Images/authbackground.jpg");
         background-repeat: no-repeat;
@@ -133,7 +139,7 @@ input[type=text] {
   /* BUTTONS */
 .authbutton {
     width:100%;
-    background: #3858FF;
+    background: #4741A6;
     color:white;
     border: none;
     text-align: center;

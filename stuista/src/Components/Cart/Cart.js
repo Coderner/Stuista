@@ -1,8 +1,16 @@
 import React from "react";
 import './Cart.css';
 import CoursegridImage from "../Images/coursegrid.png";
+import {Link,useHistory} from "react-router-dom";
 
 const Cart= () => {
+
+        const history = useHistory();
+        let item = {
+              title: history.location.state.title,
+              instructorName: history.location.state.instructorName,
+              imageUrl: history.location.state.imageUrl
+          }
         return(
                 <div className="Cart">
                         <div className="CartSummary">
@@ -16,11 +24,11 @@ const Cart= () => {
                         <div className="CourseTable">
                                <div className="CourseContentblock">
                                <div className="CourseItem">
-                                 <div className="Courseitemimage"><figure><img src={CoursegridImage}/></figure></div>
+                                 <figure><img src={"https://stuista.herokuapp.com/" + item.imageUrl } alt="Course pic" className="carouselimage" /></figure>
                                  <div className="CourseInfo">
-                                   <h3>Course Name</h3>
-                                   <p>By instructor name</p>
-                                   <h2>Remove</h2>
+                                   <h3>{item.title}</h3>
+                                   <h4>By {item.instructorName}</h4>
+                                   <h4>Remove</h4>
                                  </div>
                                </div>
                                </div>

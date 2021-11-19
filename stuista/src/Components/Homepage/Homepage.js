@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Homepage.css";
+import ReactDOM from 'react-dom';
 import { Link} from "react-router-dom";
 import Carousel from "react-elastic-carousel";
 import Instructor from "../Images/instructor.svg";
@@ -11,13 +12,99 @@ import  second from "../Images/mentor.webp";
 import story2 from "../Images/SuccessStoriesImages/Story1.svg";
 import story1 from "../Images/SuccessStoriesImages/Story2.svg";
 import story3 from "../Images/SuccessStoriesImages/Story3.svg";
+// import useHistory from "react-router";
 
 const Homepage= () => {
  
+  const [courseData, setCourseData] = useState([]);
+
+  const webgetdata = async () => {
+    try {
+       const res = await fetch("https://stuista.herokuapp.com/courses/Web Development",
+        { method:"GET",
+            headers: {
+                Accept: "application/json", 
+               "Content-Type": "application/json"
+            }
+         });
+         const data= await res.json();
+         setCourseData(data.course);
+         console.log(data);
+       } catch (err) {
+       console.log(err);
+     }
+   }
+   const androidgetdata = async () => {
+    try {
+       const res = await fetch("https://stuista.herokuapp.com/courses/Android Development",
+        { method:"GET",
+            headers: {
+                Accept: "application/json", 
+               "Content-Type": "application/json"
+            }
+         });
+         const data= await res.json();
+         setCourseData(data.course);
+         console.log(data);
+       } catch (err) {
+       console.log(err);
+     }
+   }
+   const datasciencegetdata = async () => {
+    try {
+       const res = await fetch("https://stuista.herokuapp.com/courses/Data Science",
+        { method:"GET",
+            headers: {
+                Accept: "application/json", 
+               "Content-Type": "application/json"
+            }
+         });
+         const data= await res.json();
+         setCourseData(data.course);
+         console.log(data);
+       } catch (err) {
+       console.log(err);
+     }
+   }
+   const languagegetdata = async () => {
+    try {
+       const res = await fetch("https://stuista.herokuapp.com/courses/Programming Languages",
+        { method:"GET",
+            headers: {
+                Accept: "application/json", 
+               "Content-Type": "application/json"
+            }
+         });
+         const data= await res.json();
+         setCourseData(data.course);
+         console.log(data);
+       } catch (err) {
+       console.log(err);
+     }
+   }
+   const databasegetdata = async () => {
+    try {
+       const res = await fetch("https://stuista.herokuapp.com/courses/Database Design",
+        { method:"GET",
+            headers: {
+                Accept: "application/json", 
+               "Content-Type": "application/json"
+            }
+         });
+         const data= await res.json();
+         setCourseData(data.course);
+         console.log(data);
+       } catch (err) {
+       console.log(err);
+     }
+   }
+
+
+ 
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
-        { width: 550, itemsToShow: 2 },
-        { width: 768, itemsToShow: 3 }
+        { width: 430, itemsToShow: 2 },
+        { width: 690, itemsToShow: 3 }
       ];
 
         return(
@@ -35,71 +122,32 @@ const Homepage= () => {
                <div className="Coursebar">
                    <div className="course-list">
                    <ul class="course-list-ul">
-                       <li><Link className = "course-list-li" to="">DATA SCIENCE</Link></li>
-                       <li><Link className = "course-list-li" to="">AUTONOMOUS SYSTEM</Link></li>
-                       <li><Link className = "course-list-li" to="">PRODUCT MANAGEMENT</Link></li>
-                       <li><Link className = "course-list-li" to="">CLOUD MANAGEMENT</Link></li>
-                       <li><Link className = "course-list-li" to="">AI</Link></li>
-                       <li><Link className = "course-list-li" to="">PROGRAMMING</Link></li>
-                       <li><Link className = "course-list-li" to="">BUSINESS</Link></li>
-                       <li><Link className = "course-list-li" to="">CYBER SECURITY</Link></li>
-                      </ul>
+                       <li onClick={webgetdata}><Link className = "course-list-li" to="">WEB DEVELOPMENT</Link></li>
+                       <li onClick={androidgetdata}><Link className = "course-list-li" to="">ANDROID DEVELOPMENT</Link></li>
+                       <li onClick={languagegetdata}><Link className = "course-list-li" to="">PROGRAMMING LANGUAGES</Link></li>
+                       <li onClick={datasciencegetdata}><Link className = "course-list-li" to="">DATA SCIENCE</Link></li>
+                       <li onClick={databasegetdata}><Link className = "course-list-li" to="">DATABASE DESIGN</Link></li>
+                    </ul>
                    </div>
                </div>
 
                 <div className="CourseCarousel">
-                  <Carousel breakPoints={breakPoints}>
-                          <div className="coursecard">
-                          <Link to="/course">
-                          <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p>
-                          <p className="Estimatetime">ESTIMATE TIME</p>
-                          <p>1 Month</p>
-                          </Link>
-                        </div>
-                        <div className="coursecard">
-                          <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p>
-                          <p className="Estimatetime">ESTIMATE TIME</p>
-                          <p>1 Month</p>
-                        </div>
-                        <div className="coursecard">
-                          <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p>
-                          <p className="Estimatetime">ESTIMATE TIME</p>
-                          <p>1 Month</p>
-                        </div>
-                        <div className="coursecard">
-                          <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p>
-                          <p className="Estimatetime">ESTIMATE TIME</p>
-                          <p>1 Month</p>
-                        </div>
-                        <div className="coursecard">
-                          <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p>
-                          <p className="Estimatetime">ESTIMATE TIME</p>
-                          <p>1 Month</p>
-                        </div>
-                        <div className="coursecard">
-                          <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p>
-                          <p className="Estimatetime">ESTIMATE TIME</p>
-                          <p>1 Month</p>
-                        </div>
-                        <div className="coursecard">
-                          <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p>
-                          <p className="Estimatetime">ESTIMATE TIME</p>
-                          <p>1 Month</p>
-                        </div>
-                        <div className="coursecard">
-                          <figure><img src={CoursegridImage} alt="Course pic" className="carouselimage" /></figure>
-                          <p>Intro Data Analysis</p>
-                          <p className="Estimatetime">ESTIMATE TIME</p>
-                          <p>1 Month</p>
-                        </div>
-                </Carousel>
+                  <Carousel breakPoints={breakPoints} className="s">
+                          
+                           {courseData.map((user) => (
+                            
+                                <div className="coursecard">
+                                   <figure><img src={"https://stuista.herokuapp.com/" + user.imageUrl } alt="Course pic" className="carouselimage" /></figure>
+                                   <Link to={{ 
+                                                 pathname: "/course", 
+                                                 state: user
+                                             }}><p>{user.title}</p></Link>
+                                   <p className="Estimatetime">ESTIMATE TIME</p>
+                                   <p>{user.duration}</p>
+                                </div>
+                             ))}
+                          
+                 </Carousel>
               </div>
               
               <div className="ProgramsOverview">
@@ -140,10 +188,10 @@ const Homepage= () => {
 
 
               <div className="Instructorsection">
-                 <div className="InstructorContent">
-                   <div className="becomeInstructor">
-                     <h1 className="instructor">Become an Instructor </h1>
-                     <button className="instructorbutton">Proceed</button>
+                 <div id="InstructorContent">
+                   <div id="becomeInstructor">
+                     <h1 id="instructor">Become an Instructor </h1>
+                     <button id="instructorbutton">Proceed</button>
                     </div>
                    <div className="Image"><figure><img src={Instructor} alt="instructor pic" className="instructorimage" /></figure></div>
                  </div>

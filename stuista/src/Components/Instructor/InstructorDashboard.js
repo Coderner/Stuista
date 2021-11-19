@@ -5,6 +5,25 @@ import profile from "../Images/CourseImages/Avatar3.svg";
 import CoursegridImage from "../Images/coursegrid.png";
 
 const InstructorDashboard= () => {
+  
+//   const Instructorgetdata = async () => {
+//     try {
+//        const res = await fetch("http://08ca-27-63-132-161.ngrok.io/courses/webd"",
+//         {
+//             method:"GET",
+//             headers: {
+//                 Accept: "application/json", 
+//                "Content-Type": "application/json"
+//             }
+//          });
+//          const data= await res.json();
+//          console.log(data);
+//     } catch (err) {
+//        console.log(err);
+//     }
+// }
+
+
 return(
         <div className="InstructorDashboard">
 
@@ -22,7 +41,7 @@ return(
 
                       <div className="CreateCourseSection">
                             <h1 className="CourseCreationHeading">Jump Into Course Creation</h1>
-                            <button className="CreateCourse">Create your course</button>
+                            <button className="CreateCourse"><Link to="/courseupload">Create your course</Link></button>
                      </div>
               
               </div>

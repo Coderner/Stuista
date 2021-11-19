@@ -6,6 +6,7 @@ import { Link,useHistory } from "react-router-dom";
 const Login = () => {
 
     const history = useHistory();
+    const [allEntry, setallEntry] = useState([]);
 
     const [user, setUser] = useState({
         email:"",
@@ -45,7 +46,7 @@ const Login = () => {
     const PostData = async (e) => {
         e.preventDefault();
         const {email,password} = user;
-         const res = await fetch("http://1752-2401-4900-4454-5289-c139-c0b3-39b0-e7d9.ngrok.io/auth/login",{
+         const res = await fetch("https://stuista.herokuapp.com/auth/login",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -56,15 +57,31 @@ const Login = () => {
          });
          const data = await res.json();
          console.log(data);
-         const Token= data.accesstoken;
-         console.log(data.accesstoken);
-
+        
+        const accesstoken=data.accesstoken;
+        localStorage.setItem("loginToken",accesstoken);
+        console.log(localStorage.getItem("loginToken"));
     
          if( !data || data.Error){
            window.alert(data.Error);
            console.log(data.Error);
+           if(data.Error=="user not verified. kindly check your mail for otp and verify your account")
+           {    
+                const newEntry = { ...user }
+                 setallEntry([...allEntry, newEntry]);
+                  let object ={
+                     email:newEntry.email,
+                     password:newEntry.password
+                  }
+                 history.push({
+                  pathname : "/signupotpverification",
+                  state : object
+                });
+           }
          }
-        else{
+        else if(data.instructor=="true"){
+          history.push("/continueas");
+        }else{
           window.alert("Successful Login");
           console.log("Successful Login");
           history.push("/");

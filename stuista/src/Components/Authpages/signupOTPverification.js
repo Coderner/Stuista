@@ -44,7 +44,7 @@ const SignupOtpverification = () => {
         email: history.location.state.email,
         password: history.location.state.password
       };
-      const response = await fetch("http://1752-2401-4900-4454-5289-c139-c0b3-39b0-e7d9.ngrok.io/auth/resendotp",{
+      const response = await fetch("https://stuista.herokuapp.com/auth/resendotp",{
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -69,7 +69,7 @@ const SignupOtpverification = () => {
         }
         // console.log(object);
 
-         const res = await fetch("http://1752-2401-4900-4454-5289-c139-c0b3-39b0-e7d9.ngrok.io/auth/verifyotp",{
+         const res = await fetch("https://stuista.herokuapp.com/auth/verifyotp",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -79,6 +79,9 @@ const SignupOtpverification = () => {
          });
          const data = await res.json();
          console.log(data)
+         const accesstoken=data.accesstoken;
+         localStorage.setItem("signupToken",accesstoken);
+         console.log(localStorage.getItem("signupToken"));
     
          if( !data || data.Error){
            window.alert(data.Error);
