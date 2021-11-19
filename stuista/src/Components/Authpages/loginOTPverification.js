@@ -43,7 +43,7 @@ const LoginOtpverification = () => {
         email: history.location.state.email,
         password: history.location.state.password
       };
-      const response = await fetch("http://cd25-2409-4050-d98-33bb-9842-613e-1b35-216a.ngrok.io/auth/resendotp",{
+      const response = await fetch("https://stuista.herokuapp.com/auth/resendotp",{
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -67,7 +67,7 @@ const LoginOtpverification = () => {
         }
         // console.log(object);
 
-         const res = await fetch("http://cd25-2409-4050-d98-33bb-9842-613e-1b35-216a.ngrok.io/auth/verifyotp",{
+         const res = await fetch("https://stuista.herokuapp.com/auth/verifyotp",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"

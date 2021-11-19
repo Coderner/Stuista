@@ -6,6 +6,24 @@ import profile from "../Images/CourseImages/Avatar3.svg";
 import CoursegridImage from "../Images/coursegrid.png";
 
 const UserDashboard= () => {
+ 
+// const usergetdata = async () => {
+//     try {
+//        const res = await fetch(link,{
+//             method:"GET",
+//             headers: {
+//                 Accept: "application/json", 
+//                "Content-Type": "application/json"
+//             }
+//          });
+//          const data= await res.json();
+//          console.log(data);
+//     } catch (err) {
+//        console.log(err);
+//     }
+// }
+
+
 return(
            <div className="userDashboard">
 

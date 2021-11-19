@@ -48,7 +48,7 @@ const SignUp = () => {
             value=e.target.value;
             setUser({...user,[name]:value});
             setErrors(validate(user));
-        }
+            }
 
         const PostData = async (e) => {
             e.preventDefault();
@@ -63,7 +63,7 @@ const SignUp = () => {
               }
             //   console.log(object);
 
-             const res = await fetch("http://cd25-2409-4050-d98-33bb-9842-613e-1b35-216a.ngrok.io/auth/signup",{
+             const res = await fetch("https://stuista.herokuapp.com/auth/signup",{
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json"

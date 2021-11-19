@@ -46,7 +46,7 @@ const Login = () => {
     const PostData = async (e) => {
         e.preventDefault();
         const {email,password} = user;
-         const res = await fetch("http://cd25-2409-4050-d98-33bb-9842-613e-1b35-216a.ngrok.io/auth/login",{
+         const res = await fetch("https://stuista.herokuapp.com/auth/login",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -57,8 +57,10 @@ const Login = () => {
          });
          const data = await res.json();
          console.log(data);
-         const Token= data.accesstoken;
-         console.log(data.accesstoken);
+        
+        const accesstoken=data.accesstoken;
+        localStorage.setItem("loginToken",accesstoken);
+        console.log(localStorage.getItem("loginToken"));
     
          if( !data || data.Error){
            window.alert(data.Error);

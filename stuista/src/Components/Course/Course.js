@@ -4,6 +4,10 @@ import star from "../Images/CourseImages/star.png";
 import avatar1 from "../Images/CourseImages/Avatar1.svg";
 import avatar2 from "../Images/CourseImages/Avatar2.svg";
 import avatar3 from "../Images/CourseImages/Avatar3.svg";
+import  third from "../Images/career-coach.webp";
+import first from "../Images/real-world-projects.webp";
+import  fourth from "../Images/self-paced.webp";
+import  second from "../Images/mentor.webp";
 
 const Course = () =>{
   return(
@@ -59,7 +63,7 @@ const Course = () =>{
                    <h1 className="programs">All our Programs include</h1>
 
                    <div className="Programfeatures">
-                        {/* <div className="featureImage"><figure><img src={first} alt="overview pic" className="programOverviewimage" /></figure></div> */}
+                        <div className="featureImage"><figure><img src={first} alt="overview pic" className="programOverviewimage" /></figure></div>
                         <div className="feature">
                         <h6 className="title">Real-world projects from industry experts</h6>
                         <p className="paracontent">With real world projects and immersive content built in partnership with top tier companies, you’ll master the tech skills companies want</p>
@@ -67,21 +71,21 @@ const Course = () =>{
                    </div>
 
                    <div className="Programfeatures">
-                        {/* <div className="featureImage"><figure><img src={second} alt="overview pic" className="programOverviewimage" /></figure></div> */}
+                        <div className="featureImage"><figure><img src={second} alt="overview pic" className="programOverviewimage" /></figure></div>
                         <div className="feature">
                         <h6 className="title">Technical mentor support</h6>
                         <p className="paracontent">With real world projects and immersive content built in partnership with top tier companies, you’ll master the tech skills companies want</p>
                         </div>
                   </div>
                    <div className="Programfeatures">
-                        {/* <div className="featureImage"><figure><img src={third} alt="overview pic" className="programOverviewimage" /></figure></div> */}
+                        <div className="featureImage"><figure><img src={third} alt="overview pic" className="programOverviewimage" /></figure></div>
                         <div className="feature">
                         <h6 className="title">Career services</h6>
                         <p className="paracontent">With real world projects and immersive content built in partnership with top tier companies, you’ll master the tech skills companies want</p>
                         </div>
                   </div>
                    <div className="Programfeatures">
-                        {/* <div className="featureImage"><figure><img src={fourth} alt="overview pic" className="programOverviewimage" /></figure></div> */}
+                        <div className="featureImage"><figure><img src={fourth} alt="overview pic" className="programOverviewimage" /></figure></div>
                         <div className="feature">
                         <h6 className="title">Flexible learning program</h6>
                         <p className="paracontent">With real world projects and immersive content built in partnership with top tier companies, you’ll master the tech skills companies want</p>
