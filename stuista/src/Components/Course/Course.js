@@ -29,6 +29,23 @@ const Course = () =>{
             // reviews: history.location.state.reviews,
         }
 
+        const download = async () => {
+            try {
+               const res = await fetch("http://243a-2401-4900-c09-5edc-9b4-8a28-20c7-6f45.ngrok.io/courses/syllabus/6197f58b5b95be41e3e1d1e4/download",
+                { method:"GET",
+                    headers: {
+                        Accept: "application/json", 
+                       "Content-Type": "application/pdf"
+                    }
+                 });
+                 const data= res;
+            //      setCourseData(data.course);
+                 console.log(data);
+               } catch (err) {
+               console.log(err);
+             }
+           }
+
   return(
      <div>   
            <div className="Coursebg">
@@ -36,7 +53,7 @@ const Course = () =>{
                                 <div className="CourseIntroLines">  
                                    <h1>{object.title}</h1>
                                    <p>{object.introduction}</p>
-                                   <button className="CourseButton syllabus">DOWNLOAD SYLLABUS</button>
+                                   <button onClick={download} className="CourseButton syllabus">DOWNLOAD SYLLABUS</button>
                                    <button className="CourseButton enroll">BUY NOW</button>
                                 </div>
                 </div>
