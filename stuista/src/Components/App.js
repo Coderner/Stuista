@@ -14,10 +14,10 @@ import Course from "./Course/Course";
 import InstructorDashboard from "./Instructor/InstructorDashboard";
 import CourseUpload from "./Instructor/CourseUpload";
 import UserDashboard from "./User/UserDashboard";
-// import Categories from "./Categories";
+import Filter from "./Filter/Filter";
 import Cart from "./Cart/Cart";
 import ContinueAs from "./Authpages/ContinueAs";
-import Linkngrok from "./Link";
+// import Linkngrok from "./Link";
 import {Route,Switch} from 'react-router-dom';
 
 function App() {
@@ -37,6 +37,7 @@ function App() {
       <Route path="/resetpassword"><Resetpassword/></Route>
       <Route path="/continueas"><ContinueAs/></Route>
       <Route path="/course"><Course/></Route>
+      <Route path="/filter"><Filter/></Route>
       <Route path="/userdashboard"><UserDashboard/></Route>
       <Route path="/instructordashboard"><InstructorDashboard/></Route>
       <Route path="/courseupload"><CourseUpload/></Route>
@@ -47,7 +48,7 @@ function App() {
       </div>
 
       <Footer/>
-      <Linkngrok/>
+      {/* <Linkngrok/> */}
        
     </div>
     );
