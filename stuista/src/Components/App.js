@@ -17,6 +17,7 @@ import UserDashboard from "./User/UserDashboard";
 import Filter from "./Filter/Filter";
 import Cart from "./Cart/Cart";
 import ContinueAs from "./Authpages/ContinueAs";
+import BecomeInstructor from "./Instructor/BecomeInstructor";
 // import Linkngrok from "./Link";
 import {Route,Switch} from 'react-router-dom';
 
@@ -42,6 +43,7 @@ function App() {
       <Route path="/instructordashboard"><InstructorDashboard/></Route>
       <Route path="/courseupload"><CourseUpload/></Route>
       <Route path="/cart"><Cart/></Route>
+      <Route path="/becomeInstructor"><BecomeInstructor/></Route>
       <Route path="/"><Homepage/></Route>
       </Switch>
 

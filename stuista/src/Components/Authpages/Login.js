@@ -58,9 +58,11 @@ const Login = () => {
          const data = await res.json();
          console.log(data);
         
-        const accesstoken=data.accesstoken;
+        const {accesstoken}=data;
         localStorage.setItem("loginToken",accesstoken);
+        localStorage.setItem("isAuthenticatedLogin", true);
         console.log(localStorage.getItem("loginToken"));
+        console.log(localStorage.getItem("isAuthenticatedLogin"));
     
          if( !data || data.Error){
            window.alert(data.Error);

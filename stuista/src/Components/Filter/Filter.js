@@ -1,10 +1,29 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Filter.css";
 import filter from "../Images/Filter.png";
+import { Link} from "react-router-dom";
 
 const Filter = () => {
 
-    
+  const [allcourseData, setAllcourseData] = useState([]);
+
+  const FilterCourses = async () => {
+    try {
+             const res = await fetch("https://stuista.herokuapp.com/courses/show?",
+              { method:"GET",
+                  headers: {
+                      Accept: "application/json", 
+                     "Content-Type": "application/json"
+                  }
+               });
+               const response= await res.json();
+               setAllcourseData(response.course);
+               console.log(response);
+             } catch (err) {
+             console.log(err);
+           }
+       }
+
         return(      
             <div  className="Filter">
 
@@ -38,6 +57,7 @@ const Filter = () => {
                         <input type="checkbox" id="domain3" name="domain3" value=""/>
                           <label for="domain3">Database Design</label><br/>
                     </div>
+                   
                     <div id="filter">
                         <h4>Duration</h4>
                         <input type="checkbox" id="1" name="duration1" value="Bike"/>
@@ -49,13 +69,15 @@ const Filter = () => {
                         <input type="checkbox" id="3" name="duration3" value="Boat"/>
                           <label for="3">8 weeks</label><br/>
                     </div>
+
                     <div id="filter">
                         <h4>Language</h4>
-                        <input type="checkbox" id="language1" name="language1" value="English"/>
-                          <label for="language1">English</label><br/>
-                        <input type="checkbox" id="language2" name="language2" value="Hindi"/>
-                          <label for="language2">Hindi</label><br />
+                        <input type="checkbox" id="english" name="english" value="English"/>
+                          <label for="english">English</label><br/>
+                        <input type="checkbox" id="hindi" name="hindi" value="Hindi"/>
+                          <label for="hindi">Hindi</label><br />
                     </div>
+
                     <div id="filter">
                         <h4>Rating</h4>
                         <input type="checkbox" id="rating1" name="rating1" value="4"/>
@@ -66,11 +88,30 @@ const Filter = () => {
                           <label for="rating3">Greater Than 2</label><br/>
                     </div>
                   </div>
+
+                  <button id="filterbutton" onClick={FilterCourses}>Filter</button>
+
                 </div>
 
             <div id="coursesafterfilter">    
                 <div id="filteredcourse">
-                          <h1>hii</h1>        
+                    {allcourseData.map((user) => (
+                            <div className="explorecourse">
+                               <figure><img src={"https://stuista.herokuapp.com/" + user.imageUrl } alt="Course pic" className="carouselimage" /></figure>
+                               <div className="courseExploreinfo">
+                               <h5>{user.title}</h5>
+                               <p>{user.instructorName}</p>
+                               <p>{user.duration}</p>
+                               <p>{user.price}</p>
+                               </div>
+                               <div className="Explore">
+                               <Link to={{ 
+                                             pathname: "/course", 
+                                             state: user
+                                         }}><h6>Explore</h6></Link>
+                              </div>
+                            </div>
+                         ))} 
                 </div>
             </div>    
 

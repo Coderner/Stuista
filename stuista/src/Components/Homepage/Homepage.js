@@ -191,7 +191,7 @@ const Homepage= () => {
                  <div id="InstructorContent">
                    <div id="becomeInstructor">
                      <h1 id="instructor">Become an Instructor </h1>
-                     <button id="instructorbutton">Proceed</button>
+                     <Link to="/becomeInstructor"><button id="instructorbutton">Proceed</button></Link>
                     </div>
                    <div className="Image"><figure><img src={Instructor} alt="instructor pic" className="instructorimage" /></figure></div>
                  </div>

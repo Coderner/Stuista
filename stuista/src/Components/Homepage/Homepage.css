@@ -98,6 +98,10 @@
     width:80%;
   }
 
+  .filteredcoursepanel{
+    width:80%;
+  }
+
   .coursecard p{
     text-align: left;
   }
@@ -261,3 +265,6 @@
       padding:6%;
   }
   
+  .Explore{
+    padding-left:5%;
+  }

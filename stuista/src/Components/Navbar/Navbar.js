@@ -1,14 +1,15 @@
 import React,{useState} from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { NavLink,Link } from "react-router-dom";
+import { NavLink,Link,useHistory } from "react-router-dom";
 import logo from "../Images/Stuista.png";
-import cart from "../Images/Icons/shopping-cart.png";
+import cartimage from "../Images/Icons/shopping-cart.png";
 import "./Navbar.css";
-
 
 const Navbar = () => {
 
+   const history = useHistory();
    const [allcourseData,setAllcourseData]= useState([]);
+   const [cart,setCart]= useState();
 
    const getallCourses = async () => {
        try {
@@ -42,6 +43,31 @@ const Navbar = () => {
             }
         };
 
+        const getcart = async () => {
+          try {
+                   const res = await fetch("https://stuista.herokuapp.com/courses/cart",
+                    { method:"GET",
+                        headers: {
+                            "Authorization": "Bearer "+localStorage.getItem("loginToken"),
+                            Accept: "application/json", 
+                           "Content-Type": "application/json"
+                        }
+                     });
+                     const cartinfo= await res.json();
+                     setCart(cartinfo);
+                     if(cart){
+                      history.push({
+                        pathname : "/cart",
+                        state : cart})
+                     }
+                     console.log(cartinfo);
+              } catch (err) {
+                   console.log(err);
+                 }
+             }
+
+
+
         return(
           
             <nav className="navbar">
@@ -74,7 +100,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="navlist cart">
-                   <NavLink to="/cart"><img src={cart} alt="cart" /></NavLink>
+                   <div onClick={getcart}><img src={cartimage} alt="cart" /></div>
                  </li>
                  
                  <li className="navlist Instructor">

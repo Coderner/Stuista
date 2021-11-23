@@ -36,6 +36,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    border:solid black 1px;
+    width:100%;
 }
 
 .CourseContentblock{
@@ -50,6 +52,10 @@
     flex-wrap: wrap;
   }
 
-  .courseInfo{
-      margin-left: 20%;
+  .CourseInfo{
+      margin-left: 5%;
+  }
+
+  #removebutton{
+      color:blue;
   }
