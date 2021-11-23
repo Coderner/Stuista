@@ -1,0 +1,270 @@
+.learnwith{
+    font-family: Inter; font-size: 69px; font-style: normal; 
+    font-variant: normal; font-weight: 800; line-height: 76.24px;
+    color: #3F3D56;
+    text-shadow:4px 4px #00000040;
+    margin-bottom: 0%;
+}
+
+.stuista{
+    font-family: Ubuntu; font-size: 63px; font-style: normal; 
+    font-variant: normal; font-weight: 800; line-height: 76.24px;
+    color:#3887EE;
+    text-shadow:4px 4px rgba(56, 135, 238, 0.25);
+    text-align: center;
+}
+
+.para{
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Content{
+ background-color: #FFFFFF;
+ margin-top:21.5%;
+ margin-bottom:3.5%;
+ padding:1.1% 9.6%;
+}
+
+.para{
+    font-family: Inter; text-align: center;font-weight: bold; padding-top:1.5%;
+}
+
+.Homepage{
+  margin-top:4%;
+  background-image: url("../Images/Homepage.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Coursebar */
+.Coursebar{
+    display: flex;
+    flex-direction: row;
+    background-color: #474481;
+    width: 100%;
+}
+
+ .course-list{
+   margin:1.2%;
+ }
+
+ .course-list-ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Inter;
+  }
+  .course-list-li {
+    padding: 4.5px 40px;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  .course-list-li:hover {
+    font-weight: bolder;
+    color: white;
+  }
+
+  /* Caraousel */
+  .CourseCarousel{
+    background-color: white;
+    padding-bottom: 6%;
+  }
+
+  .s{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: wrap;
+  }
+
+  .coursecard{
+    border: solid;
+    border-color:#FFFFFF;
+    box-shadow: 0px 6.599999904632568px 15px 0px #00000040;
+    margin: 15% 0%;
+    width:80%;
+  }
+
+  .filteredcoursepanel{
+    width:80%;
+  }
+
+  .coursecard p{
+    text-align: left;
+  }
+
+  .Estimatetime{
+    font-weight: bold;
+  }
+
+  .carouselimage{
+    height:160px;
+    width:290px;
+  }
+  /* ProgramsOverview */
+  .ProgramsOverview{
+    background-color: #F3F9FF;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 5%;
+    padding-top: 4%;
+  }
+
+  .Programfeatures{
+    width:40%;
+    margin:5% 0% 5% 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+   
+ .featureImage{
+    width:50%;
+  }
+
+  .feature{
+    width:50%;
+  }
+
+  .title{
+    text-align: left;
+  }
+
+  .paracontent{
+    text-align: left;
+  }
+
+  .programs{
+    width:100%;
+    text-align: center;
+    padding:2% 0%;
+  }
+
+  .programOverviewimage{
+    height: 80%;
+    width: 80%;
+  }
+
+
+
+  /* Instructor */
+.instructorimage{
+    position:relative;
+}  
+
+
+.Instructorsection{
+  background-color: white;
+}
+
+#InstructorContent{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.Instructorsection{
+  margin:5% 0%;
+  background-color:#FFF7FD;
+}
+
+#becomeInstructor{
+  width:50%;
+}
+
+.Image{
+  width:50%;
+}
+
+#instructor{
+  padding-top:28%;
+  padding-left:26%;
+}
+
+#instructorbutton {
+  width:64%;
+  background: #4741A6;
+  color:white;
+  border: none;
+  text-align: center;
+  padding:1.5%;
+  font-size: 140%;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-left:22%;
+  margin-top:3.5%;
+} 
+
+
+
+/* Success Stories */
+.SuccessStories{
+    display: flex;
+    flex-direction: row;
+    background-color:white;
+    width: 100%;
+    margin-top: 6%;
+    margin-bottom: 5.5%;
+}
+
+ .success-list{
+   margin-top: 4%;
+   margin-left: 5%;
+ }
+
+ .success-list-ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Inter;
+  }
+  .success-list-li {
+    padding: 5px 60px;
+    color: black;
+    text-decoration: none;
+  }
+
+  .Story{
+    margin-left: 15%;
+  }
+
+  h5,h6,p{
+      text-align: center;
+  }
+
+  p{
+      font-size: 85%;
+      font-family: Inter;
+      line-height: 17px;
+  }
+
+  .success-list-li h5{
+      font-weight: bolder;
+      padding-top: 14%;
+      padding-bottom:6%;
+  }
+
+  h6{
+      letter-spacing:50%;
+      padding:6%;
+  }
+  
+  .Explore{
+    padding-left:5%;
+  }
