@@ -26,12 +26,13 @@ const Course = () =>{
             instructorName: history.location.state.instructorName,
             instructorEmail: history.location.state.instructorEmail,
             instructorExperience: history.location.state.instructorExperience,
+            _id: history.location.state._id,
             // reviews: history.location.state.reviews,
         }
 
         const download = async () => {
             try {
-               const res = await fetch("http://243a-2401-4900-c09-5edc-9b4-8a28-20c7-6f45.ngrok.io/courses/syllabus/6197f58b5b95be41e3e1d1e4/download",
+               const res = await fetch("https://stuista.herokuapp.com/courses/syllabus/6197f58b5b95be41e3e1d1e4/download",
                 { method:"GET",
                     headers: {
                         Accept: "application/json", 
@@ -46,6 +47,60 @@ const Course = () =>{
              }
            }
 
+           const AddtoCart = async () => {
+            try {
+               const res = await fetch(`https://stuista.herokuapp.com/courses/addtocart/${object._id}`,
+                { method:"POST",
+                    headers: {
+                        "Authorization": "Bearer "+localStorage.getItem("loginToken"),
+                        Accept: "application/json", 
+                        "Content-Type": "application/json"
+                    }
+                 });
+                 const data= res;
+                 console.log(data);
+               } catch (err) {
+               console.log(err);
+             }
+           }
+
+           const AddtoFav = async () => {
+            try {
+               const res = await fetch(`https://stuista.herokuapp.com/courses/addtofavourites/${object._id}`,
+                { method:"POST",
+                    headers: {
+                        "Authorization": "Bearer "+localStorage.getItem("loginToken"),
+                        Accept: "application/json", 
+                        "Content-Type": "application/json"
+                    }
+                 });
+                 const data= res;
+                 console.log(data);
+               } catch (err) {
+               console.log(err);
+             }
+           }
+
+           const Buy = async () => {
+            try {
+               const res = await fetch(`https://stuista.herokuapp.com/courses/buynow/${object._id}`,
+                { method:"POST",
+                    headers: {
+                        "Authorization": "Bearer "+localStorage.getItem("loginToken"),
+                        Accept: "application/json", 
+                        "Content-Type": "application/json"
+                    }
+                 });
+                 const data= res;
+                 window.alert("Course Bought");
+               } catch (err) {
+               console.log(err);
+             }
+           }
+
+          
+
+
   return(
      <div>   
            <div className="Coursebg">
@@ -54,7 +109,7 @@ const Course = () =>{
                                    <h1>{object.title}</h1>
                                    <p>{object.introduction}</p>
                                    <button onClick={download} className="CourseButton syllabus">DOWNLOAD SYLLABUS</button>
-                                   <button className="CourseButton enroll">BUY NOW</button>
+                                   <button onClick={Buy} className="CourseButton enroll" >BUY NOW</button>
                                 </div>
                 </div>
 
@@ -96,12 +151,9 @@ const Course = () =>{
 
                 <div>
                                    <h1 id="buylater">Wanna buy later?</h1>
-                                   <Link to={{ 
-                                                 pathname: "/cart", 
-                                                 state: object
-                                             }}> <button className="buylaterbuttons">ADD TO CART</button></Link>
+                                   <button className="buylaterbuttons" onClick={AddtoCart}>ADD TO CART</button>
                                   
-                                   <button className="buylaterbuttons">ADD TO FAVOURITES</button>
+                                   <button className="buylaterbuttons" onClick={AddtoFav}>ADD TO FAVOURITES</button>
                 </div>
 
                 <div className="ProgramsOverview">

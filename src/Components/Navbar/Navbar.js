@@ -1,15 +1,47 @@
-import React,{useState} from "react";
+import React,{useState,useContext} from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { NavLink,Link,useHistory } from "react-router-dom";
 import logo from "../Images/Stuista.png";
 import cartimage from "../Images/Icons/shopping-cart.png";
 import "./Navbar.css";
+import {UserContext} from "../App";
 
 const Navbar = () => {
 
    const history = useHistory();
    const [allcourseData,setAllcourseData]= useState([]);
    const [cart,setCart]= useState();
+   const [fav,setFav]= useState();
+   const {state,dispatch} = useContext(UserContext);
+   
+   const clear = () => {
+      dispatch({type:"USER", payload:false});
+      localStorage.removeItem("loginToken");
+      localStorage.setItem("isAuthenticatedLogin", false);
+      console.log(localStorage.getItem("isAuthenticatedLogin"));
+      window.alert("logged out");
+      history.push("/");
+   }
+
+  const ToggleMenu = () =>{
+    // console.log(state);
+    if(localStorage.getItem("isAuthenticatedLogin")) {
+          return(
+            <>
+                <li className="navlist signup">
+                  <NavLink to="/" onClick={clear}><button className="log-signbuttons">Log Out</button></NavLink>
+                </li>
+                  <li className="navlist signup">
+                   <NavLink to="/signup"><button className="log-signbuttons">Sign Up</button></NavLink>
+                   </li>
+                
+                   <li className="navlist login">
+                   <NavLink to="/login"><button className="log-signbuttons">Log in</button></NavLink>
+                   </li>
+         </>
+       )
+    }
+  }
 
    const getallCourses = async () => {
        try {
@@ -54,17 +86,48 @@ const Navbar = () => {
                         }
                      });
                      const cartinfo= await res.json();
-                     setCart(cartinfo);
-                     if(cart){
-                      history.push({
-                        pathname : "/cart",
-                        state : cart})
+                     if(cartinfo.message){
+                       window.alert("Login First");
+                     }else {
+                      setCart(cartinfo);
+                      if(cart){
+                       history.push({
+                         pathname : "/cart",
+                         state : cart})
+                      console.log(cartinfo);
+                       }
                      }
-                     console.log(cartinfo);
               } catch (err) {
                    console.log(err);
                  }
              }
+
+             const getfav = async () => {
+              try {
+                       const res = await fetch("https://stuista.herokuapp.com/courses/favourites",
+                        { method:"GET",
+                            headers: {
+                                "Authorization": "Bearer "+localStorage.getItem("loginToken"),
+                                Accept: "application/json", 
+                               "Content-Type": "application/json"
+                            }
+                         });
+                         const cartinfo= await res.json();
+                         if(cartinfo.message){
+                           window.alert("Login First");
+                         }else {
+                          setFav(cartinfo);
+                          if(fav){
+                           history.push({
+                             pathname : "/favourite",
+                             state : fav})
+                          console.log(cartinfo);
+                           }
+                         }
+                  } catch (err) {
+                       console.log(err);
+                     }
+                 }
 
 
 
@@ -100,22 +163,20 @@ const Navbar = () => {
                 </li>
 
                 <li className="navlist cart">
-                   <div onClick={getcart}><img src={cartimage} alt="cart" /></div>
+                   <NavLink onClick={getcart} to=""><img src={cartimage} alt="cart" /></NavLink>
+                 </li>
+
+                 <li className="navlist fav">
+                   <NavLink className="text" onClick={getfav} to="">Fav</NavLink>
                  </li>
                  
                  <li className="navlist Instructor">
                    <NavLink className="text" to="/instructordashboard">As Instructor</NavLink>
                  </li>
 
-                 <li className="navlist login">
-                 <NavLink to="/login"><button className="log-signbuttons">Log in</button></NavLink>
-                 </li>
-
-                 <li className="navlist signup">
-                 <NavLink to="/signup"><button className="log-signbuttons">Sign Up</button></NavLink>
-                 </li>
-                 
-           </ul>
+                 <ToggleMenu/>
+                  
+            </ul>
         </nav>
         )
 }

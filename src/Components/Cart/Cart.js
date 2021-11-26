@@ -11,6 +11,25 @@ const Cart= () => {
               price: history.location.state.price
           }
 
+
+        //   const  RemovecartItem= async () => {
+        //         try {
+
+        //            const res = await fetch(`https://stuista.herokuapp.com/courses/removefromcart/${user._id}`,
+        //             { method:"POST",
+        //                 headers: {
+        //                     "Authorization": "Bearer "+localStorage.getItem("loginToken"),
+        //                     Accept: "application/json", 
+        //                     "Content-Type": "application/json"
+        //                 }
+        //              });
+        //              const data= res;
+        //              console.log(data);
+        //            } catch (err) {
+        //            console.log(err);
+        //          }
+        //        }
+
         return(
                 <div className="Cart">
                         <div className="CartSummary">
@@ -31,7 +50,7 @@ const Cart= () => {
                                                       <h3>{user.title}</h3>
                                                   </Link>
                                                       <h4>{user.price}</h4>
-                                                      <h4 id="removebutton" >Remove</h4>
+                                                      <h4 id="removebutton">Remove</h4>
                                                   </div>
                                                </div>
                                        ))}

@@ -1,9 +1,12 @@
-import React, {useState} from "react";
+import React, {useState,useContext} from "react";
 import login from "../Images/Login.svg";
 import './Auth.css';
 import { Link,useHistory } from "react-router-dom";
+import {UserContext} from "../App";
 
 const Login = () => {
+
+    const {state,dispatch} = useContext(UserContext);
 
     const history = useHistory();
     const [allEntry, setallEntry] = useState([]);
@@ -60,9 +63,8 @@ const Login = () => {
         
         const {accesstoken}=data;
         localStorage.setItem("loginToken",accesstoken);
-        localStorage.setItem("isAuthenticatedLogin", true);
         console.log(localStorage.getItem("loginToken"));
-        console.log(localStorage.getItem("isAuthenticatedLogin"));
+       
     
          if( !data || data.Error){
            window.alert(data.Error);
@@ -84,6 +86,9 @@ const Login = () => {
         else if(data.instructor=="true"){
           history.push("/continueas");
         }else{
+          dispatch({type:"USER", payload:true});
+          localStorage.setItem("isAuthenticatedLogin", true);
+          console.log(localStorage.getItem("isAuthenticatedLogin"));
           window.alert("Successful Login");
           console.log("Successful Login");
           history.push("/");
