@@ -72,7 +72,7 @@ const CourseUpload= () => {
           }
         //   console.log(object);
 
-         const res = await fetch("http://5f4d-2401-4900-5a34-abe3-49b2-f93a-8c24-6907.ngrok.io/auth/signup",{
+         const res = await fetch("https://stuista.herokuapp.com/instructor/instructor/addcourse",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"

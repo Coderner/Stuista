@@ -8,7 +8,7 @@ const InstructorDashboard= () => {
   
 //   const Instructorgetdata = async () => {
 //     try {
-//        const res = await fetch("http://08ca-27-63-132-161.ngrok.io/courses/webd"",
+//        const res = await fetch("http://08ca-27-63-132-161.ngrok.io/instructor/viewprofile",
 //         {
 //             method:"GET",
 //             headers: {

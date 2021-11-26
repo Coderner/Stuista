@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useReducer,createContext} from "react";
 import './App.css';
 import Navbar from "./Navbar/Navbar";
 import Signup from "./Authpages/Signup";
@@ -16,21 +16,28 @@ import CourseUpload from "./Instructor/CourseUpload";
 import UserDashboard from "./User/UserDashboard";
 import Filter from "./Filter/Filter";
 import Cart from "./Cart/Cart";
+import Favourite from "./Cart/Favourite";
 import ContinueAs from "./Authpages/ContinueAs";
 import BecomeInstructor from "./Instructor/BecomeInstructor";
-// import Linkngrok from "./Link";
 import {Route,Switch} from 'react-router-dom';
+import {reducer, initialState} from "./Reducer/UseReducer";
+
+export const UserContext = createContext();
 
 function App() {
   
+  const [state,dispatch] = useReducer(reducer, initialState);
+
   return (
     <div className="app">
-      
+  
       <div class="pagecontainer">
+
+      <UserContext.Provider value={{state,dispatch}}>
       <Navbar/>
       <Switch>
-      <Route path="/Signup"><Signup/></Route>
-      <Route path="/Login"><Login/></Route>
+      <Route path="/signup"><Signup/></Route>
+      <Route path="/login"><Login/></Route>
       <Route path="/forgotpassword"><Forgetpassword/></Route>
       <Route path="/signupotpverification"><SignupOtpverification/></Route>
       <Route path="/resetotpverification"><ResetOtpverification/></Route>
@@ -43,14 +50,14 @@ function App() {
       <Route path="/instructordashboard"><InstructorDashboard/></Route>
       <Route path="/courseupload"><CourseUpload/></Route>
       <Route path="/cart"><Cart/></Route>
+      <Route path="/favourite"><Favourite/></Route>
       <Route path="/becomeInstructor"><BecomeInstructor/></Route>
       <Route path="/"><Homepage/></Route>
       </Switch>
-
+      </UserContext.Provider>
       </div>
 
       <Footer/>
-      {/* <Linkngrok/> */}
        
     </div>
     );
