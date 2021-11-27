@@ -1,7 +1,7 @@
 import React from "react";
 import "./Instructor.css";
 import { Link} from "react-router-dom";
-import profile from "../Images/CourseImages/Avatar3.svg";
+import profile from "../Images/Avatar.svg";
 import CoursegridImage from "../Images/coursegrid.png";
 
 const InstructorDashboard= () => {

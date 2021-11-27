@@ -49,7 +49,7 @@ const Login = () => {
     const PostData = async (e) => {
         e.preventDefault();
         const {email,password} = user;
-         const res = await fetch("https://stuista.herokuapp.com/auth/login",{
+         const res = await fetch("http://e51c-2401-4900-30cc-d4e7-ec82-79b7-af8-d574.ngrok.io/auth/login",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -62,9 +62,12 @@ const Login = () => {
          console.log(data);
         
         const {accesstoken}=data;
+        console.log(data.mycourses);
+        // const {mycourses}=data.mycourses;
+        // console.log(mycourses);
         localStorage.setItem("loginToken",accesstoken);
+        // localStorage.setItem("myCourses",mycourses);
         console.log(localStorage.getItem("loginToken"));
-       
     
          if( !data || data.Error){
            window.alert(data.Error);

@@ -1,14 +1,11 @@
 import React from "react";
 import "./Course.css";
 import star from "../Images/CourseImages/star.png";
-import avatar1 from "../Images/CourseImages/Avatar1.svg";
-import avatar2 from "../Images/CourseImages/Avatar2.svg";
-import avatar3 from "../Images/CourseImages/Avatar3.svg";
 import  third from "../Images/career-coach.webp";
 import first from "../Images/real-world-projects.webp";
 import  fourth from "../Images/self-paced.webp";
 import  second from "../Images/mentor.webp";
-import user from "../Homepage/Homepage";
+// import user from "../Homepage/Homepage";
 import {Link,useHistory} from "react-router-dom";
 
 const Course = () =>{
@@ -27,6 +24,8 @@ const Course = () =>{
             instructorEmail: history.location.state.instructorEmail,
             instructorExperience: history.location.state.instructorExperience,
             _id: history.location.state._id,
+            videosArray: history.location.state.videosArray,
+            eachrating: history.location.state.eachrating,
             // reviews: history.location.state.reviews,
         }
 
@@ -59,6 +58,7 @@ const Course = () =>{
                  });
                  const data= res;
                  console.log(data);
+                 window.alert("Added to Cart");
                } catch (err) {
                console.log(err);
              }
@@ -76,6 +76,7 @@ const Course = () =>{
                  });
                  const data= res;
                  console.log(data);
+                 window.alert("Added to Favourites");
                } catch (err) {
                console.log(err);
              }
@@ -98,7 +99,22 @@ const Course = () =>{
              }
            }
 
-          
+           const CourseVideos = () =>{
+            if(localStorage.getItem("loginToken")){
+                  return(
+                    <>
+                        {object.videosArray.map((video) => (
+                              <video className="video" width="500" height="350" controls><source src={"https://stuista.herokuapp.com/" + video} type="video/mp4"/></video>
+                        ))}
+                   </>
+               )
+            }
+            else{
+                  return(
+                        <p>Buy course to access videos</p>
+                  )
+            }
+          }
 
 
   return(
@@ -144,10 +160,14 @@ const Course = () =>{
                             <p className="aboutCourse">{object.instructorName}</p>
                             <p className="aboutCourse">{object.instructorEmail}</p>
                             <p className="aboutCourse">{object.instructorExperience}</p>
+                            <div>
+                           
+                            </div>
                       </div>
                             <div className="Imagecourse"><figure><img src={"https://stuista.herokuapp.com/" + object.imageUrl } alt="Course pic" className="carouselimage" /></figure></div>
                       </div>
-                </div>
+                            <div className="videos"><CourseVideos/></div>
+                      </div>
 
                 <div>
                                    <h1 id="buylater">Wanna buy later?</h1>
@@ -197,50 +217,19 @@ const Course = () =>{
                 <div className="Reviews">
                       <div className="ReviewContent">
                         <h5 className="reviewtitle">Top Student Reviews</h5>
-                        <div className="Reviewsblock">
-                          <div className="Reviewcard">
-                           <figure><img src={avatar1} className="Avatarimage" /></figure>
-                           <h5 className="name">Alexa</h5>
-                           <button className="reviewbutton"><img src={star}/></button>
-                           {/* <p>{object.reviews}</p> */}
-                           <p>1 Month</p>
-                          </div>
-                          <div className="Reviewcard">
-                           <figure><img src={avatar2} className="Avatarimage" /></figure>
-                           <h5 className="name">Alexa</h5>
-                           <button className="reviewbutton"><img src={star}/></button>
-                           <p>ESTIMATE TIME</p>
-                           <p>1 Month</p>
-                          </div>
-                          <div className="Reviewcard">
-                           <figure><img src={avatar3} className="Avatarimage" /></figure>
-                           <h5 className="name">Alexa</h5>
-                           <button className="reviewbutton"><img src={star}/></button>
-                           <p>ESTIMATE TIME</p>
-                           <p>1 Month</p>
-                          </div>
-                          <div className="Reviewcard">
-                           <figure><img src={avatar2} className="Avatarimage" /></figure>
-                           <h5 className="name">Alexa</h5>
-                           <button className="reviewbutton"><img src={star}/></button>
-                           <p>ESTIMATE TIME</p>
-                           <p>1 Month</p>
-                          </div>
-                          <div className="Reviewcard">
-                           <figure><img src={avatar1} className="Avatarimage" /></figure>
-                           <h5 className="name">Alexa</h5>
-                           <button className="reviewbutton"><img src={star}/></button>
-                           <p>ESTIMATE TIME</p>
-                           <p>1 Month</p>
-                          </div>
-                          <div className="Reviewcard">
-                           <figure><img src={avatar3} className="Avatarimage" /></figure>
-                           <h5 className="name">Alexa</h5>
-                           <button className="reviewbutton"><img src={star}/></button>
-                           <p>ESTIMATE TIME</p>
-                           <p>1 Month</p>
-                          </div>
-                        </div>
+                     <div className="Reviewsblock">
+                          
+                            {object.eachrating.map((rating) => (
+                              <div className="Reviewcard">
+                              <figure><img src={"https://stuista.herokuapp.com/" + rating.user.imageUrl} className="Avatarimage" /></figure>
+                              <h5 className="name">{rating.user.fullname}</h5>
+                              <button className="reviewbutton"><img src={star}/>{rating.rate}</button>
+                              <p>{rating.userreview}</p>
+                              </div>
+                          ))}
+                         
+                          
+                     </div>
                     </div>
                 </div>
 
