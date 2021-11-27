@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import resetimage from "../Images/Signup.svg";
 import './Auth.css';
-import { Link,useHistory } from "react-router-dom";
-// import "./resetOTPverification";
+import {useHistory } from "react-router-dom";
 
 const Resetpassword = () => {
 
@@ -42,7 +41,6 @@ const Resetpassword = () => {
     const PostData = async (e) => {
         e.preventDefault();
         const newEntry = { ...user}
-        // console.log(newEntry);
         setallEntry([...allEntry, newEntry]);
 
         let object = {

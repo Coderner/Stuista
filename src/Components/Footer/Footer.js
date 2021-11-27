@@ -10,15 +10,13 @@ const Footer = () => {
                    <div className="col">
                        <div className="footerlist">
                            <li>Teach on Stuista</li>
-                           <li>Get the app</li>
                            <li>About us</li>
-                           <li>Contact us</li>
+                           <li>Contact Us</li>
                        </div>
                    </div>
                    <div className="col">
                        <div className="footerlist">
                            <li>Careers</li>
-                           <li>Blog</li>
                            <li>Help and Support</li>
                            <li>Affiliate</li>
                        </div>
@@ -27,11 +25,10 @@ const Footer = () => {
                        <div className="footerlist">
                            <li>Terms</li>
                            <li>Privacy policy</li>
-                           <li>Sitemap</li>
                        </div>
                    </div>
                    <div className="col">
-                    <button className="language-button"><img src={language}/> English</button>
+                    <button className="language-button"><img src={language} alt="language"/> English</button>
                    </div>
              </div>
              <div className="row second">

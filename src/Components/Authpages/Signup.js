@@ -52,8 +52,6 @@ const SignUp = () => {
 
         const PostData = async (e) => {
             e.preventDefault();
-
-            //  const {fullname,email,password} = user;
              const newEntry = { ...user }
              setallEntry([...allEntry, newEntry]);
              let object ={
@@ -61,7 +59,6 @@ const SignUp = () => {
                 email:newEntry.email,
                 password:newEntry.password
               }
-            //   console.log(object);
 
              const res = await fetch("https://stuista.herokuapp.com/auth/signup",{
                 method: "POST",

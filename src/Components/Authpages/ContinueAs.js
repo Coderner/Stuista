@@ -1,7 +1,6 @@
-import React, {useState} from "react";
-import signup from "../Images/Signup.svg";
+import React from "react";
 import './Auth.css';
-import { Link,useHistory} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const ContinueAs = () => {
      return(

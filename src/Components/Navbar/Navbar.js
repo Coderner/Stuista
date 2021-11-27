@@ -1,10 +1,9 @@
-import React,{useState,useContext} from "react";
+import React,{useState} from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { NavLink,Link,useHistory } from "react-router-dom";
 import logo from "../Images/Stuista.png";
 import cartimage from "../Images/Icons/shopping-cart.png";
 import "./Navbar.css";
-import {UserContext} from "../App";
 
 const Navbar = () => {
 
@@ -12,10 +11,8 @@ const Navbar = () => {
    const [allcourseData,setAllcourseData]= useState([]);
    const [cart,setCart]= useState();
    const [fav,setFav]= useState();
-   const {state,dispatch} = useContext(UserContext);
    
    const clear = () => {
-      // dispatch({type:"USER", payload:false});
       localStorage.removeItem("loginToken");
       localStorage.setItem("isAuthenticatedLogin", false);
       console.log(localStorage.getItem("isAuthenticatedLogin"));
@@ -68,6 +65,12 @@ const Navbar = () => {
                 console.log(err);
               }
           }
+
+        const handleKeyDown = (e) => {
+            if (e.key === 'Enter') {
+              console.log('do validate');
+            }
+          }  
        
         const [filteredData,setFilteredData]= useState([]);
         
@@ -75,7 +78,7 @@ const Navbar = () => {
             const searchWord= e.target.value;
             const newFilter = allcourseData.filter((value)=> {
                   return value.title.toLowerCase().includes(searchWord.toLowerCase());
-            });
+           });
 
             if (searchWord==="") {
               setFilteredData([])
@@ -156,7 +159,7 @@ const Navbar = () => {
                 </li>
                  
                 <li className="navlist navsearch"><form>
-                       <input className="search" type="search" placeholder="Search" onClick={getallCourses} onChange={handleFilter}/>
+                       <input className="search" type="search" placeholder="Search" onClick={getallCourses} onChange={handleFilter} onKeyDown={handleKeyDown}/>
                             {filteredData.length !== 0 && (
                                 <div className="dataresult">
                                     {filteredData.map((value,key)=>{

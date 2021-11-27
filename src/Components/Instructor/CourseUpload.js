@@ -1,6 +1,6 @@
 import React, {useState}  from "react";
 import "./CourseUpload.css";
-import { Link,useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 const CourseUpload= () => {
 
@@ -9,7 +9,7 @@ const CourseUpload= () => {
 
     const [user, setUser] = useState({
         title:"",category:"",duration:"",PreRequisites:"",introduction:"",
-        description:"",price:"",language:"",skillsLearned:""
+        description:"",price:"",language:"",skillsLearned:"",image: null,video:null,
     });
 
     const [errors,setErrors]= useState({});
@@ -54,6 +54,8 @@ const CourseUpload= () => {
         setErrors(validate(user));
     }
 
+  
+
     const PostData = async (e) => {
         e.preventDefault();
 
@@ -69,14 +71,17 @@ const CourseUpload= () => {
             price:newEntry.price,
             language:newEntry.language,
             skillsLearned:newEntry.skillsLearned,
+            image:newEntry.image,
+            video:newEntry.video
           }
         //   console.log(object);
 
-         const res = await fetch("https://stuista.herokuapp.com/instructor/instructor/addcourse",{
+         const res = await fetch("https://stuista.herokuapp.com/instructor/addcourse",{
             method: "POST",
             headers: {
+              "Authorization": "Bearer "+localStorage.getItem("loginToken"), 
               "Content-Type": "application/json"
-             },
+            },
             body:JSON.stringify(object)
          });
          const data = await res.json();
@@ -206,6 +211,7 @@ const CourseUpload= () => {
                                                name="Image"
                                                id="Image"
                                                value={user.image}
+                                               onChange={handleInput}
                                                />
                                          </div>
 
@@ -214,7 +220,8 @@ const CourseUpload= () => {
                                               <input type="file"
                                                name="Vedio"
                                                id="Vedio"
-                                               value={user.Vedio}
+                                               value={user.video}
+                                               onChange={handleInput}
                                                />
                                          </div>
                                    

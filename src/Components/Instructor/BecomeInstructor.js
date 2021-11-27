@@ -3,7 +3,7 @@ import "./BecomeInstructor.css";
 import guideimage1 from "../Images/Guide/image1.png";
 import guideimage2 from "../Images/Guide/image2.png";
 import guideimage3 from "../Images/Guide/image3.png";
-import { Link,useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 const BecomeInstructor= () => {
 
