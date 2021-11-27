@@ -15,7 +15,7 @@ const Navbar = () => {
    const {state,dispatch} = useContext(UserContext);
    
    const clear = () => {
-      dispatch({type:"USER", payload:false});
+      // dispatch({type:"USER", payload:false});
       localStorage.removeItem("loginToken");
       localStorage.setItem("isAuthenticatedLogin", false);
       console.log(localStorage.getItem("isAuthenticatedLogin"));
@@ -25,21 +25,30 @@ const Navbar = () => {
 
   const ToggleMenu = () =>{
     // console.log(state);
-    if(localStorage.getItem("isAuthenticatedLogin")) {
+    if(localStorage.getItem("loginToken")) {
           return(
             <>
+                <li className="navlist fav">
+                 <NavLink className="text" onClick={getfav} to="">Fav</NavLink>
+               </li>
                 <li className="navlist signup">
                   <NavLink to="/" onClick={clear}><button className="log-signbuttons">Log Out</button></NavLink>
                 </li>
+            </>
+       )
+    }
+    else{
+      return(
+      <>
                   <li className="navlist signup">
                    <NavLink to="/signup"><button className="log-signbuttons">Sign Up</button></NavLink>
                    </li>
                 
                    <li className="navlist login">
                    <NavLink to="/login"><button className="log-signbuttons">Log in</button></NavLink>
-                   </li>
-         </>
-       )
+                  </li>
+      </>
+      )
     }
   }
 
@@ -165,11 +174,7 @@ const Navbar = () => {
                 <li className="navlist cart">
                    <NavLink onClick={getcart} to=""><img src={cartimage} alt="cart" /></NavLink>
                  </li>
-
-                 <li className="navlist fav">
-                   <NavLink className="text" onClick={getfav} to="">Fav</NavLink>
-                 </li>
-                 
+         
                  <li className="navlist Instructor">
                    <NavLink className="text" to="/instructordashboard">As Instructor</NavLink>
                  </li>

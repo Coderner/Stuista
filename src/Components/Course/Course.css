@@ -214,7 +214,13 @@
     width: 80%;
   }
 
-
+  .videos{
+    margin-left: 6%;
+  }
+ 
+  .video{
+    margin-left:5%;
+ }
 
 
 /* Review Section */
@@ -266,6 +272,7 @@
   border-radius: 8.83px;
   background: #474480;
   width:20%;
+  color:#FFFFFF;
 }
 
 
