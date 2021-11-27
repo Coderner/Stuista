@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import forgetpasswordimage from "../Images/Forgetpassword.svg";
 import './Auth.css';
-import { Link,useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 
 const Forgetpassword = () => {
@@ -22,7 +22,7 @@ const Forgetpassword = () => {
             errors.email = "Email address is invalid"
         }
             return errors;
-    }
+       }
         
     let name,value;
     const handleInput = (e) =>{
@@ -35,13 +35,10 @@ const Forgetpassword = () => {
 
     const PostData = async (e) => {
         e.preventDefault();
-        // const {email} = user;
         const newEntry = { ...user }
         setallEntry([...allEntry, newEntry]);
         let object ={
-           fullname:newEntry.fullname,
-           email:newEntry.email,
-           password:newEntry.password
+           email:newEntry.email
          }
          const res = await fetch("https://stuista.herokuapp.com/auth/verifybeforereset",{
             method: "POST",
@@ -70,7 +67,7 @@ const Forgetpassword = () => {
            <section className="forgetpassword">
                   <div className="passwordImage">
                              <figure>
-                                 <img src={forgetpasswordimage} alt="forget password image" className="forgetpasswordimage" />
+                                 <img src={forgetpasswordimage} className="forgetpasswordimage" alt="forgetpassword"/>
                             </figure>
                   </div>
                      <div className="Forgetpassword-form">

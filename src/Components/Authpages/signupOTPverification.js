@@ -67,7 +67,6 @@ const SignupOtpverification = () => {
             email: history.location.state.email,
             password : history.location.state.password
         }
-        // console.log(object);
 
          const res = await fetch("https://stuista.herokuapp.com/auth/verifyotp",{
             method: "POST",

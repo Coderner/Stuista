@@ -1,7 +1,6 @@
 import React from "react";
 import "./User.css";
 import "../Instructor/Instructor.css";
-import { Link} from "react-router-dom";
 import profile from "../Images/CourseImages/Avatar3.svg";
 import CoursegridImage from "../Images/coursegrid.png";
 
@@ -29,7 +28,7 @@ return(
 
                   <div className="userContentblock">
                      <div className="userContent">
-                        <div className="ProfileAvatar"><figure><img src={profile}/></figure></div>
+                        <div className="ProfileAvatar"><figure><img src={profile} alt="profile"/></figure></div>
                         <div className="userInfo">
                             <h1>Hi Shreya Shukla</h1>
                             <h2>shreya@gmail.com</h2>

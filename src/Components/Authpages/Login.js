@@ -1,12 +1,9 @@
-import React, {useState,useContext} from "react";
+import React, {useState} from "react";
 import login from "../Images/Login.svg";
 import './Auth.css';
 import { Link,useHistory } from "react-router-dom";
-import {UserContext} from "../App";
 
 const Login = () => {
-
-    const {state,dispatch} = useContext(UserContext);
 
     const history = useHistory();
     const [allEntry, setallEntry] = useState([]);
@@ -17,6 +14,7 @@ const Login = () => {
     });
 
     const [errors,setErrors]= useState({});
+    const [myCourse,setMyCourse]= useState([]);
     
     const validate = (user)=> {
         let errors = {}
@@ -49,7 +47,7 @@ const Login = () => {
     const PostData = async (e) => {
         e.preventDefault();
         const {email,password} = user;
-         const res = await fetch("http://e51c-2401-4900-30cc-d4e7-ec82-79b7-af8-d574.ngrok.io/auth/login",{
+         const res = await fetch("https://stuista.herokuapp.com/auth/login",{
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -62,17 +60,19 @@ const Login = () => {
          console.log(data);
         
         const {accesstoken}=data;
-        console.log(data.mycourses);
-        // const {mycourses}=data.mycourses;
-        // console.log(mycourses);
+        
+        setMyCourse(data.mycourses);
+        console.log(myCourse);
+        localStorage.setItem("myCourse",myCourse);
         localStorage.setItem("loginToken",accesstoken);
-        // localStorage.setItem("myCourses",mycourses);
-        console.log(localStorage.getItem("loginToken"));
     
+        console.log(localStorage.getItem("loginToken"));
+        console.log(localStorage.getItem("myCourse"));
+
          if( !data || data.Error){
            window.alert(data.Error);
            console.log(data.Error);
-           if(data.Error=="user not verified. kindly check your mail for otp and verify your account")
+           if(data.Error==="user not verified. kindly check your mail for otp and verify your account")
            {    
                 const newEntry = { ...user }
                  setallEntry([...allEntry, newEntry]);
@@ -86,12 +86,9 @@ const Login = () => {
                 });
            }
          }
-        else if(data.instructor=="true"){
+        else if(data.instructor==="true"){
           history.push("/continueas");
         }else{
-          dispatch({type:"USER", payload:true});
-          localStorage.setItem("isAuthenticatedLogin", true);
-          console.log(localStorage.getItem("isAuthenticatedLogin"));
           window.alert("Successful Login");
           console.log("Successful Login");
           history.push("/");

@@ -40,9 +40,7 @@ const ResetOtpverification = () => {
     const handleResendOtp = async (e) => {
       e.preventDefault();
       const resendobject = {
-        // fullname: history.location.state.fullname,
         email: history.location.state.email,
-        // password: history.location.state.password
       };
       const response = await fetch("https://stuista.herokuapp.com/auth/resendotp",{
         method: "POST",
@@ -63,11 +61,8 @@ const ResetOtpverification = () => {
 
         let object = {
             otp: newEntry.otp,
-            // fullname: history.location.state.fullname,
             email: history.location.state.email,
-            // password : history.location.state.password
         }
-        // console.log(object);
 
          const res = await fetch("https://stuista.herokuapp.com/auth/checkotpbeforereset",{
             method: "POST",

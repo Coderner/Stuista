@@ -30,7 +30,7 @@ return(
               <div className="InstructorContentblock">
 
                       <div className="InstructorContent">
-                         <div className="ProfileAvatar"><figure><img src={profile}/></figure></div>
+                         <div className="ProfileAvatar"><figure><img src={profile} alt="profile"/></figure></div>
                          <div className="InstructorInfo">
                             <h1>Hi Shreya Shukla</h1>
                             <h2>shreya@gmail.com</h2>

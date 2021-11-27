@@ -5,8 +5,7 @@ import  third from "../Images/career-coach.webp";
 import first from "../Images/real-world-projects.webp";
 import  fourth from "../Images/self-paced.webp";
 import  second from "../Images/mentor.webp";
-// import user from "../Homepage/Homepage";
-import {Link,useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 const Course = () =>{
 
@@ -26,20 +25,17 @@ const Course = () =>{
             _id: history.location.state._id,
             videosArray: history.location.state.videosArray,
             eachrating: history.location.state.eachrating,
-            // reviews: history.location.state.reviews,
         }
 
-        const download = async () => {
+        const Download = async () => {
             try {
-               const res = await fetch("https://stuista.herokuapp.com/courses/syllabus/6197f58b5b95be41e3e1d1e4/download",
+               const res = await fetch(`https://stuista.herokuapp.com/courses/syllabus/${object._id}/download`,
                 { method:"GET",
                     headers: {
-                        Accept: "application/json", 
-                       "Content-Type": "application/pdf"
+                        Accept: "*/*", 
                     }
                  });
                  const data= res;
-            //      setCourseData(data.course);
                  console.log(data);
                } catch (err) {
                console.log(err);
@@ -93,6 +89,7 @@ const Course = () =>{
                     }
                  });
                  const data= res;
+                 console.log(data);
                  window.alert("Course Bought");
                } catch (err) {
                console.log(err);
@@ -124,7 +121,7 @@ const Course = () =>{
                                 <div className="CourseIntroLines">  
                                    <h1>{object.title}</h1>
                                    <p>{object.introduction}</p>
-                                   <button onClick={download} className="CourseButton syllabus">DOWNLOAD SYLLABUS</button>
+                                   <button onClick={Download} className="CourseButton syllabus">DOWNLOAD SYLLABUS</button>
                                    <button onClick={Buy} className="CourseButton enroll" >BUY NOW</button>
                                 </div>
                 </div>
@@ -221,9 +218,9 @@ const Course = () =>{
                           
                             {object.eachrating.map((rating) => (
                               <div className="Reviewcard">
-                              <figure><img src={"https://stuista.herokuapp.com/" + rating.user.imageUrl} className="Avatarimage" /></figure>
+                              <figure><img src={"https://stuista.herokuapp.com/" + rating.user.imageUrl} className="Avatarimage" alt="userpic"/></figure>
                               <h5 className="name">{rating.user.fullname}</h5>
-                              <button className="reviewbutton"><img src={star}/>{rating.rate}</button>
+                              <button className="reviewbutton"><img src={star} alt="star"/>{rating.rate}</button>
                               <p>{rating.userreview}</p>
                               </div>
                           ))}

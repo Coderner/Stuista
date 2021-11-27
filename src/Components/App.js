@@ -1,4 +1,4 @@
-import React,{useReducer,createContext} from "react";
+import React from "react";
 import './App.css';
 import Navbar from "./Navbar/Navbar";
 import Signup from "./Authpages/Signup";
@@ -20,20 +20,14 @@ import Favourite from "./Cart/Favourite";
 import ContinueAs from "./Authpages/ContinueAs";
 import BecomeInstructor from "./Instructor/BecomeInstructor";
 import {Route,Switch} from 'react-router-dom';
-import {reducer, initialState} from "./Reducer/UseReducer";
-
-export const UserContext = createContext();
 
 function App() {
   
-  const [state,dispatch] = useReducer(reducer, initialState);
-
   return (
     <div className="app">
   
       <div class="pagecontainer">
 
-      <UserContext.Provider value={{state,dispatch}}>
       <Navbar/>
       <Switch>
       <Route path="/signup"><Signup/></Route>
@@ -54,7 +48,7 @@ function App() {
       <Route path="/becomeInstructor"><BecomeInstructor/></Route>
       <Route path="/"><Homepage/></Route>
       </Switch>
-      </UserContext.Provider>
+    
       </div>
 
       <Footer/>
